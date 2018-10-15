@@ -1,10 +1,9 @@
+# folders
 
-
-*.bin
-*.obj
-*.packages
-*.vs
-*.cache
+bin
+obj
+packages
+.vs
 
 # files
 

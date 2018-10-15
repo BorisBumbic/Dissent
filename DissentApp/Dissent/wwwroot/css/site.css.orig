@@ -39,3 +39,17 @@ body {
         display: none;
     }
 }
+<<<<<<< HEAD
+
+.brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important; 
+    display: block;
+}
+
+.navbar {
+    color:#000000;
+}
+=======
+>>>>>>> 98a5eca95acb028daf96530575453a239e0bb97b

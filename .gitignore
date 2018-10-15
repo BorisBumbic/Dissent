@@ -4,6 +4,7 @@
 *.obj
 *.packages
 *.vs
+*.cache
 
 # files
 

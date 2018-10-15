@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\SOurceTreeTMP\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.deps.json
 C:\SOurceTreeTMP\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.runtimeconfig.json
 C:\SOurceTreeTMP\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.runtimeconfig.dev.json
@@ -30,6 +31,8 @@ C:\SOurceTreeTMP\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.Views.pdb
 C:\SOurceTreeTMP\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.dll
 C:\SOurceTreeTMP\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.pdb
 C:\SOurceTreeTMP\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.csproj.CopyComplete
+=======
+>>>>>>> 905ff8d7a38c886a3935af39e9c52fd15e42d312
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.deps.json
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.runtimeconfig.json
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.runtimeconfig.dev.json
@@ -37,7 +40,10 @@ C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\n
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.pdb
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.Views.dll
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.Views.pdb
+<<<<<<< HEAD
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.csprojAssemblyReference.cache
+=======
+>>>>>>> 905ff8d7a38c886a3935af39e9c52fd15e42d312
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.RazorAssemblyInfo.cache
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.RazorAssemblyInfo.cs
@@ -62,6 +68,7 @@ C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\n
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.dll
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.pdb
 C:\Users\Administrator\Documents\DissentLocalRepo\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.deps.json
 C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.runtimeconfig.json
 C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\bin\Debug\netcoreapp2.1\Dissent.runtimeconfig.dev.json
@@ -94,3 +101,5 @@ C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\obj\
 C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.dll
 C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.pdb
 C:\Project\AcceleratedLearning\Slutproject\Slutprojektet\DissentApp\Dissent\obj\Debug\netcoreapp2.1\Dissent.csproj.CopyComplete
+=======
+>>>>>>> 905ff8d7a38c886a3935af39e9c52fd15e42d312

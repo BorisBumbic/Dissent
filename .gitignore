@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_a14188
 
 
 *.bin
@@ -5,9 +6,21 @@
 *.packages
 *.vs
 *.cache
+=======
+# folders
+
+bin
+obj
+packages
+.vs
+>>>>>>> .merge_file_a10748
 
 # files
 
 *.user
 *.suo
+<<<<<<< .merge_file_a14188
 *.log
+=======
+*.log
+>>>>>>> .merge_file_a10748

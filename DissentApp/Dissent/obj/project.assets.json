@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SOurceTreeTMP\\DissentApp\\Dissent\\Dissent.csproj",
+      "projectUniqueName": "C:\\Project\\AcceleratedLearning\\Slutproject\\Slutprojektet\\DissentApp\\Dissent\\Dissent.csproj",
       "projectName": "Dissent",
-      "projectPath": "C:\\SOurceTreeTMP\\DissentApp\\Dissent\\Dissent.csproj",
+      "projectPath": "C:\\Project\\AcceleratedLearning\\Slutproject\\Slutprojektet\\DissentApp\\Dissent\\Dissent.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\SOurceTreeTMP\\DissentApp\\Dissent\\obj\\",
+      "outputPath": "C:\\Project\\AcceleratedLearning\\Slutproject\\Slutprojektet\\DissentApp\\Dissent\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

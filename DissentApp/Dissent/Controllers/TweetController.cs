@@ -31,7 +31,7 @@ namespace Dissent.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult TwitterResult(string input)
         {
             var matchingTweets = Search.SearchTweets(input);

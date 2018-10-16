@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Tweetinvi.Models.ITweet>
 
-<div class="row">
+<div class="row" id="TwitterIndex">
+    
     <div class="col-md-4">
         <form asp-action="TwitterResult">
             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -15,7 +16,8 @@
 
 
 
-
+            @*<div  class="col-md-4">*@
+           
             <label for="input">Twitter Name:</label>
             <input type="text" name="input" />
             <div class="form-group">

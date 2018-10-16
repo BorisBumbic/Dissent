@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Tweetinvi.Models.ITweet>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="TwitterResult">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="input" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>*@
+
+            <br />
+
+
+
+
+
+            <label for="input">Twitter Name:</label>
+            <input type="text" name="input" />
+            <div class="form-group">
+                <input type="submit" value="View Result" class="btn btn-default" />
+            </div>
+
+
+        </form>
+    </div>
+</div>

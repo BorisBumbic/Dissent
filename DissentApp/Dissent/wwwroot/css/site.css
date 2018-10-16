@@ -5,9 +5,9 @@ body {
     background-repeat: space;
     background-repeat: repeat;
     background-size: 100px 100px;
-    /*padding-top: 50px;
-    padding-bottom: 20px;*/
+
 }
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -52,3 +52,10 @@ body {
     margin-left: -50px !important;
     display: block;
 }
+/*#Textbox {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}*/
+

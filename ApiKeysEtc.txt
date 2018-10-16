@@ -1,0 +1,5 @@
+Microsoft api keys
+
+Key 1 - 6712d8ff97cc46df9fff72c086d93709
+
+Key 2 - 4811ebb4dcb1480194ac2c33cf2e0144

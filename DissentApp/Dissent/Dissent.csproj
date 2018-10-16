@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="TweetinviAPI" Version="4.0.0" />
   </ItemGroup>
 
 </Project>

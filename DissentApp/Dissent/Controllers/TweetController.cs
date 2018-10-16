@@ -17,9 +17,7 @@ namespace Dissent.Controllers
 
         public TweetController()
         {
-            //Auth.SetUserCredentials"CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
-
-
+            
             _credentials = MyCredentials.GenerateCredentials();
 
             Auth.SetCredentials(_credentials);

@@ -41,18 +41,18 @@ namespace Dissent.Services
             //    }
             //};
 
-            string inp = JsonConvert.SerializeObject(r);  
+            //string inp = JsonConvert.SerializeObject(r);  
 
-            byte[] byteData = Encoding.UTF8.GetBytes(inp);
+            //byte[] byteData = Encoding.UTF8.GetBytes(inp);
 
-            using (var content = new ByteArrayContent(byteData))
-            {
-                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                response = await client.PostAsync(uri, content);
+            //using (var content = new ByteArrayContent(byteData))
+            //{
+            //    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //    response = await client.PostAsync(uri, content);
 
-                var result = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(result);
-            }
+            //    var result = await response.Content.ReadAsStringAsync();
+            //    Console.WriteLine(result);
+            //}
 
         }
     }

@@ -1,12 +1,10 @@
-﻿@model IEnumerable<Tweetinvi.Models.ITweet>
+﻿@model Tweetinvi.Models.ITweet
 
 
-@foreach (var item in Model)
-{
-    @*<p>@item.FullText</p>*@
-    <p>@item.Text</p>
-    <p>@item.CreatedBy</p>
-    <p>@item.Place</p>
+<br /><br /><br /><br /><br /><br />
+
+    <p>@Model.Text</p>
+    <p>@Model.CreatedBy</p>
+    <p>@Model.Place</p>
+    <p>@Model.CreatedAt</p>
   
-  
-}

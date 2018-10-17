@@ -32,8 +32,10 @@ namespace Dissent.Controllers
         [HttpPost]
         public ActionResult TwitterResult(string input)
         {
-            var matchingTweets = Search.SearchTweets(input);
-            return View(matchingTweets);
+            var matchingTweets = Search.SearchTweets(input).First();
+
+            return Ok(matchingTweets);
+            //return View(matchingTweets);
         }
     }
 }

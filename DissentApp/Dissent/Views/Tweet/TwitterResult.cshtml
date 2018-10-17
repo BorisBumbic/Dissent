@@ -1,10 +1,17 @@
-﻿@model Tweetinvi.Models.ITweet
+﻿@*@model Tweetinvi.Models.ITweet*@
+@model IEnumerable<Tweetinvi.Models.ITweet>
 
 
 <br /><br /><br /><br /><br /><br />
+@foreach (var item in Model)
+{
+    <p>@item.FullText</p>
+}
 
-    <p>@Model.Text</p>
-    <p>@Model.CreatedBy</p>
-    <p>@Model.Place</p>
-    <p>@Model.CreatedAt</p>
-  
+@*<p>@Model.Text</p>
+<p>@Model.CreatedBy</p>
+<p>@Model.Place</p>
+<p>@Model.CreatedAt</p>
+<p>@Model.Text</p>*@
+
+

@@ -41,7 +41,7 @@ namespace Dissent.Services
             //    }
             //};
 
-            //string inp = JsonConvert.SerializeObject(r);  
+            //string inp = JsonConvert.SerializeObject(r);
 
             //byte[] byteData = Encoding.UTF8.GetBytes(inp);
 

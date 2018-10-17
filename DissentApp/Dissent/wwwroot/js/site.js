@@ -1,4 +1,14 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+async function getTweet() {
 
-// Write your JavaScript code.
+    let input = "trump";
+
+    let response = await fetch("/Tweet/TwitterResult/?input=" + input, { method: "POST" });
+
+    if (response.status === 200) {
+        let result = await response.json();
+        console.log("result.fullText", result.fullText);
+    }
+}
+
+setInterval(getTweet, 1000);

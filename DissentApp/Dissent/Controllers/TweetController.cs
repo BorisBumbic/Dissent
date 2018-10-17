@@ -17,9 +17,7 @@ namespace Dissent.Controllers
 
         public TweetController()
         {
-            //Auth.SetUserCredentials"CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
-
-
+            
             _credentials = MyCredentials.GenerateCredentials();
 
             Auth.SetCredentials(_credentials);
@@ -34,8 +32,10 @@ namespace Dissent.Controllers
         [HttpPost]
         public ActionResult TwitterResult(string input)
         {
-            var matchingTweets = Search.SearchTweets(input);
-            return View(matchingTweets);
+            var matchingTweets = Search.SearchTweets(input).First();
+
+            return Ok(matchingTweets);
+            //return View(matchingTweets);
         }
     }
 }

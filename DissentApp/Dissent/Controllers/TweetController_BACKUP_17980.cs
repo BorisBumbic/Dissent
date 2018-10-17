@@ -1,4 +1,5 @@
 ﻿using Dissent.Credentials;
+using Dissent.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 
 namespace Dissent.Controllers
 {
@@ -29,11 +31,36 @@ namespace Dissent.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult TwitterResult(string input)
+        //[HttpPost]
+        //public ActionResult TwitterResult(string input)
+        //{
+        //    var matchingTweets = Search.SearchTweets(input).First();
+        //    //Tweet.
+
+        //    return Ok(matchingTweets);
+        //    //return View(matchingTweets);
+        //}
+
+        public List<Tweets> TwitterResult(string input)
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
+<<<<<<< HEAD
+                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers),
+                Lang = LanguageFilter.English,
+                MaximumNumberOfResults = 5
+
+                //    SearchType = SearchResultType.Popular,
+                //    MaximumNumberOfResults = 100,
+                //    Until = new DateTime(2015, 06, 02),
+                //    SinceId = 399616835892781056,
+                //    MaxId = 405001488843284480,
+                //    Filters = TweetSearchFilters.Images
+            };
+            var result = Search.SearchTweets(searchParameter);//.FirstOrDefault();
+            //return Ok(result);
+            return View(result);
+=======
                 GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
             };
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
@@ -52,6 +79,7 @@ namespace Dissent.Controllers
                 //Services.SentimentApiServices.RequestSentiment(tweetList);
             }
             return tweetList;
+>>>>>>> e0eaa222d80a845bde0e3950973e332cc83e8a93
         }
     }
 }

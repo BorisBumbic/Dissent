@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 
 namespace Dissent.Controllers
 {
@@ -34,24 +35,20 @@ namespace Dissent.Controllers
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
-                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
-            };
-            List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
-            List<Tweets> tweetList = new List<Tweets>();
-            foreach (var item in matchingTweets)
-            {
-                tweetList.Add(new Tweets
-                {
-                    id = item.IdStr,
-                    text = item.FullText,
-                    language = item.Language.ToString(),
-                    
+                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers),
+                Lang = LanguageFilter.English,
+                MaximumNumberOfResults = 5
 
-                });
-                
-                //Services.SentimentApiServices.RequestSentiment(tweetList);
-            }
-            return tweetList;
+                //    SearchType = SearchResultType.Popular,
+                //    MaximumNumberOfResults = 100,
+                //    Until = new DateTime(2015, 06, 02),
+                //    SinceId = 399616835892781056,
+                //    MaxId = 405001488843284480,
+                //    Filters = TweetSearchFilters.Images
+            };
+            var result = Search.SearchTweets(searchParameter);//.FirstOrDefault();
+            //return Ok(result);
+            return View(result);
         }
     }
 }

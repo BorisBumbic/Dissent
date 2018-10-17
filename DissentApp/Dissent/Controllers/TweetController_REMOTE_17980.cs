@@ -1,4 +1,5 @@
 ﻿using Dissent.Credentials;
+using Dissent.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 
 namespace Dissent.Controllers
 {
@@ -29,8 +31,17 @@ namespace Dissent.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult TwitterResult(string input)
+        //[HttpPost]
+        //public ActionResult TwitterResult(string input)
+        //{
+        //    var matchingTweets = Search.SearchTweets(input).First();
+        //    //Tweet.
+
+        //    return Ok(matchingTweets);
+        //    //return View(matchingTweets);
+        //}
+
+        public List<Tweets> TwitterResult(string input)
         {
             var searchParameter = new SearchTweetsParameters(input)
             {

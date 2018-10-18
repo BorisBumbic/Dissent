@@ -11,7 +11,7 @@ namespace Dissent.Services
 {
     public class SentimentApiService
     {
-        public static async void RequestSentiment(List<Tweets> input)
+        public static async void RequestSentiment(List<Tweets> input, List<TweetsWithSentiment> sentimentList)
         {
             var client = new HttpClient();
             //var queryString = HttpUtility.ParseQueryString("");
@@ -22,7 +22,7 @@ namespace Dissent.Services
 
             HttpResponseMessage response;
 
-            string inp = JsonConvert.SerializeObject(input);
+            string inp = "{\"documents\":" + JsonConvert.SerializeObject(input) + "}";
 
             byte[] byteData = Encoding.UTF8.GetBytes(inp);
 
@@ -32,7 +32,12 @@ namespace Dissent.Services
                 response = await client.PostAsync(uri, content);
 
                 var result = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(result);
+           
+                for (int i = 0; i < sentimentList.Count; i++)
+                {
+                    //sentimentList[i].Sentiment = result[i].sentiment;
+
+                }
             }
 
         }

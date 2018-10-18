@@ -1,37 +1,73 @@
-﻿//using Newtonsoft.Json;
-//using System;
-//using System.Net.Http;
-//using System.Net.Http.Headers;
-//using System.Text;
+﻿using Dissent.Models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using Tweetinvi;
+using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 
-//namespace Dissent.Services
-//{
-//    public class TweetsApiService
-//    {
-//        static async void MakeRequest(string input)
-//        {
-//            var client = new HttpClient();
-//            //var queryString = HttpUtility.ParseQueryString("");
+namespace Dissent.Services
+{
+    public class TweetsApiService
+    {
 
-//            client.DefaultRequestHeaders.Add(@"authorization: OAuth oauth_consumer_key='consumer-key-for-app', oauth_nonce = 'generated-nonce', oauth_signature = 'generated-signature', oauth_signature_method = 'HMAC-SHA1', oauth_timestamp = 'generated-timestamp', oauth_token = 'access-token-for-authed-user', oauth_version = '1.0'");
+        public static List<ITweet> GetTweets(string input)
+        {
+            var searchParameter = new SearchTweetsParameters(input)
+            {
+                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
+            };
+            List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
+            return matchingTweets;
+        }
 
-//            string uri = $"https://api.twitter.com/1.1/search/tweets.json?q={input}&result_type=recent" /*+ queryString*/;
+        public static List<Tweets> TweetsToTweetsModelList(List<ITweet> matchingTweets)
+        {
+            List<Tweets> tweetList = new List<Tweets>();
+            List<TweetsWithSentiment> sentimentList = new List<TweetsWithSentiment>();
+            foreach (var item in matchingTweets)
+            {
+                if(item.Language == Language.English || item.Language == Language.Swedish)
+                tweetList.Add(new Tweets
+                {
+                    id = item.IdStr,
+                    text = item.FullText,
+                    language = item.Language.ToString(),
+                });
 
-//            HttpResponseMessage response;
+            }
+            return tweetList;
+        }
 
-//            string inp = JsonConvert.SerializeObject(new { id = "1", language = "en", text = "Trump sucks!" });
+        public static List<TweetsWithSentiment> TweetsToTweetsWithSentimentModelList(List<ITweet> matchingTweets)
+        {
+            List<TweetsWithSentiment> sentimentList = new List<TweetsWithSentiment>();
+            foreach (var item in matchingTweets)
+            {
+                sentimentList.Add(new TweetsWithSentiment
+                {
+                    id = item.IdStr,
+                    text = item.FullText,
+                    language = item.Language.ToString(),
+                });
 
-//            byte[] byteData = Encoding.UTF8.GetBytes(inp);
+            }
+            return sentimentList;
+        }
 
-//            using (var content = new ByteArrayContent(byteData))
-//            {
-//                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-//                response = await client.PostAsync(uri, content);
-
-//                var result = await response.Content.ReadAsStringAsync();
-//                Console.WriteLine(result);
-//            }
-
-//        }
-//    }
-//}
+        public static void ConvertToLanguageCode(List<Tweets> tweetList)
+        {
+            foreach (var item in tweetList)
+            {
+                if (item.language == "English")
+                    item.language = "en";
+                if (item.language == "Swedish")
+                    item.language = "sv";
+            }
+        }
+    }
+}

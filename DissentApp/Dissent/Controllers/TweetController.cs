@@ -1,5 +1,6 @@
 ﻿using Dissent.Credentials;
 using Dissent.Models;
+using Dissent.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -31,38 +32,43 @@ namespace Dissent.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult TwitterResult(string input)
-        //{
-        //    var matchingTweets = Search.SearchTweets(input).First();
-        //    //Tweet.
+        [HttpPost]
+        public ActionResult TwitterResult(string input)
+        { 
 
-        //    return Ok(matchingTweets);
-        //    //return View(matchingTweets);
-        //}
 
-        public List<Tweets> TwitterResult(string input)
-        {
-            var searchParameter = new SearchTweetsParameters(input)
-            {
-                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
-            };
-            List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
-            List<Tweets> tweetList = new List<Tweets>();
-            foreach (var item in matchingTweets)
-            {
-                tweetList.Add(new Tweets
-                {
-                    id = item.IdStr,
-                    text = item.FullText,
-                    language = item.Language.ToString(),
-                    
+            List<ITweet> a = TweetsApiService.GetTweets(input);
 
-                });
-                
-                //Services.SentimentApiServices.RequestSentiment(tweetList);
-            }
-            return tweetList;
-        }
+            List<Tweets> b = TweetsApiService.TweetsToTweetsModelList(a);
+
+            List<TweetsWithSentiment> c = TweetsApiService.TweetsToTweetsWithSentimentModelList(a);
+
+            TweetsApiService.ConvertToLanguageCode(b);
+
+            SentimentApiService.RequestSentiment(b,c);
+
+
+
+            //    var searchParameter = new SearchTweetsParameters(input)
+            //    {
+            //        GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
+            //    };
+            //    List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
+            //    List<Tweets> tweetList = new List<Tweets>();
+            //    foreach (var item in matchingTweets)
+            //    {
+            //        tweetList.Add(new Tweets
+            //        {
+            //            id = item.IdStr,
+            //            text = item.FullText,
+            //            language = item.Language.ToString(),
+
+
+        //        });
+
+        //        //Services.SentimentApiServices.RequestSentiment(tweetList);
+        //    }
+            return Ok(c);
     }
+}
 }

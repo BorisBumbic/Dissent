@@ -15,8 +15,14 @@ namespace Dissent.Models
         public string id { get; set; }
         public string text { get; set; }
         public string language { get; set; }
-        public decimal sentiment { get; set; }
+        
+    }
 
-
+    public class TweetsWithSentiment
+    {
+        public string id { get; set; }
+        public string text { get; set; }
+        public string language { get; set; }
+        public decimal Sentiment { get; set; }
     }
 }

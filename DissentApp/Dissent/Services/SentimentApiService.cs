@@ -11,7 +11,7 @@ namespace Dissent.Services
 {
     public class SentimentApiService
     {
-        public static async void RequestSentiment(List<Tweets> input)
+        public static async void RequestSentiment(List<Tweets> input, List<TweetsWithSentiment> sentimentList)
         {
             var client = new HttpClient();
             //var queryString = HttpUtility.ParseQueryString("");
@@ -22,42 +22,8 @@ namespace Dissent.Services
 
             HttpResponseMessage response;
 
-            string inp = JsonConvert.SerializeObject(input);
+            string inp = "{\"documents\":" + JsonConvert.SerializeObject(input) + "}";
 
-<<<<<<< HEAD
-            //var r = new RootObject
-            //{
-            //    documents = new List<Document>
-            //    {
-            //       new Document
-            //       {
-            //           text=input,
-            //           language="en",
-            //           id="1"
-            //       },
-            //        new Document
-            //       {
-            //           text="Trump bla bla",
-            //           language="en",
-            //           id="2"
-            //       },
-
-            //    }
-            //};
-
-            //string inp = JsonConvert.SerializeObject(r);
-
-            //byte[] byteData = Encoding.UTF8.GetBytes(inp);
-
-            //using (var content = new ByteArrayContent(byteData))
-            //{
-            //    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            //    response = await client.PostAsync(uri, content);
-
-            //    var result = await response.Content.ReadAsStringAsync();
-            //    Console.WriteLine(result);
-            //}
-=======
             byte[] byteData = Encoding.UTF8.GetBytes(inp);
 
             using (var content = new ByteArrayContent(byteData))
@@ -66,9 +32,13 @@ namespace Dissent.Services
                 response = await client.PostAsync(uri, content);
 
                 var result = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(result);
+           
+                for (int i = 0; i < sentimentList.Count; i++)
+                {
+                    //sentimentList[i].Sentiment = result[i].sentiment;
+
+                }
             }
->>>>>>> e0eaa222d80a845bde0e3950973e332cc83e8a93
 
         }
     }

@@ -1,0 +1,55 @@
+<<<<<<< HEAD
+﻿
+
+@model List<Tweets>
+=======
+<<<<<<< HEAD
+﻿@*@model Tweetinvi.Models.ITweet*@
+@model IEnumerable<Tweetinvi.Models.ITweet>
+=======
+﻿@model List<Tweets>
+>>>>>>> e0eaa222d80a845bde0e3950973e332cc83e8a93
+>>>>>>> 43f0d1037299a248a1928eb15cb43a1399f80019
+
+
+<br /><br /><br /><br /><br /><br />
+
+@foreach (var item in Model)
+{
+<<<<<<< HEAD
+<p>item.text</p>
+<p>tem.id</p>
+<p>item.language</p>
+<p>item.sentiment</p>
+}
+
+   
+
+
+
+
+
+=======
+<<<<<<< HEAD
+    <p>@item.FullText</p>
+}
+=======
+    <p>@item.text</p>
+    <p>@item.id</p>
+    <p>@item.language</p>
+    <p>@item.sentiment</p>
+}       
+>>>>>>> e0eaa222d80a845bde0e3950973e332cc83e8a93
+
+@*<p>@Model.Text</p>
+<p>@Model.CreatedBy</p>
+<p>@Model.Place</p>
+<<<<<<< HEAD
+<p>@Model.CreatedAt</p>
+<p>@Model.Text</p>*@
+
+=======
+<p>@Model.CreatedAt</p>*@
+>>>>>>> e0eaa222d80a845bde0e3950973e332cc83e8a93
+>>>>>>> 43f0d1037299a248a1928eb15cb43a1399f80019
+

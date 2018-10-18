@@ -24,40 +24,6 @@ namespace Dissent.Services
 
             string inp = "{\"documents\":" + JsonConvert.SerializeObject(input) + "}";
 
-<<<<<<< HEAD
-            //var r = new RootObject
-            //{
-            //    documents = new List<Document>
-            //    {
-            //       new Document
-            //       {
-            //           text=input,
-            //           language="en",
-            //           id="1"
-            //       },
-            //        new Document
-            //       {
-            //           text="Trump bla bla",
-            //           language="en",
-            //           id="2"
-            //       },
-
-            //    }
-            //};
-
-            //string inp = JsonConvert.SerializeObject(r);
-
-            //byte[] byteData = Encoding.UTF8.GetBytes(inp);
-
-            //using (var content = new ByteArrayContent(byteData))
-            //{
-            //    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            //    response = await client.PostAsync(uri, content);
-
-            //    var result = await response.Content.ReadAsStringAsync();
-            //    Console.WriteLine(result);
-            //}
-=======
             byte[] byteData = Encoding.UTF8.GetBytes(inp);
 
             using (var content = new ByteArrayContent(byteData))
@@ -73,7 +39,6 @@ namespace Dissent.Services
 
                 }
             }
->>>>>>> e0eaa222d80a845bde0e3950973e332cc83e8a93
 
         }
     }

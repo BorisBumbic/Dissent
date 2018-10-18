@@ -1,5 +1,6 @@
 ﻿using Dissent.Credentials;
 using Dissent.Models;
+using Dissent.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

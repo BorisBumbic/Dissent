@@ -32,24 +32,28 @@ namespace Dissent.Controllers
         }
 
         [HttpPost]
-        public ActionResult TwitterResult(string input)
+        public async Task<ActionResult> TwitterResult(string input)
         { 
 
 
-            List<ITweet> a = TweetsApiService.GetTweets(input);
+            List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
 
-            List<Tweets> b = TweetsApiService.TweetsToTweetsModelList(a);
+            List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
 
-            List<TweetsWithSentiment> c = TweetsApiService.TweetsToTweetsWithSentimentModelList(a);
+            List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
 
-            TweetsApiService.ConvertToLanguageCode(b);
+            TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
 
-            SentimentApiService.RequestSentiment(b,c);
+            /*List<TweetsWithSentiment> a = */await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
+<<<<<<< HEAD
 
 
        
             return Ok(c);
         }
+=======
+            return Ok(tweetsFinalList);
+>>>>>>> 4fb7119267c905e21a71fee9a71b6ead360fa831
     }
 }

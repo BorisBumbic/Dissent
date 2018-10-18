@@ -1,5 +1,9 @@
 ﻿using Dissent.Credentials;
+<<<<<<< HEAD
 using Dissent.Models;
+using Dissent.Services;
+=======
+>>>>>>> 43f0d1037299a248a1928eb15cb43a1399f80019
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -32,6 +36,7 @@ namespace Dissent.Controllers
 
         [HttpPost]
         public ActionResult TwitterResult(string input)
+<<<<<<< HEAD
         { 
 
 
@@ -67,6 +72,30 @@ namespace Dissent.Controllers
         //        //Services.SentimentApiServices.RequestSentiment(tweetList);
         //    }
             return Ok(c);
+=======
+        {
+            var searchParameter = new SearchTweetsParameters(input)
+            {
+                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
+            };
+            List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
+            List<Tweets> tweetList = new List<Tweets>();
+            foreach (var item in matchingTweets)
+            {
+                tweetList.Add(new Tweets
+                {
+                    id = item.IdStr,
+                    text = item.FullText,
+                    language = item.Language.ToString(),
+                    
+
+                });
+                
+                //Services.SentimentApiServices.RequestSentiment(tweetList);
+            }
+            return tweetList;
+        }
+>>>>>>> 43f0d1037299a248a1928eb15cb43a1399f80019
     }
 }
 }

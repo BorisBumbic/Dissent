@@ -14,9 +14,11 @@ namespace Dissent.Services
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
-                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers),
-                MaximumNumberOfResults = 5,
-                Lang= LanguageFilter.Swedish
+                //GeoCode = new GeoCode(59.3289, 18.0649, 150, DistanceMeasure.Kilometers),
+                MaximumNumberOfResults = 20,
+                Lang= LanguageFilter.Swedish,
+                TweetSearchType = TweetSearchType.OriginalTweetsOnly,
+                SearchType = SearchResultType.Recent,
 
             };
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();

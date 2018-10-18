@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Dissent.Models
+{
+    public class TweetList<Tweets>
+    {
+
+    }
+
+    public class Tweets
+    {
+        public string Id { get; set; }
+        public string Text { get; set; }
+        public string Language { get; set; }
+
+    }
+
+    public class TweetsWithSentiment
+    {
+<<<<<<< HEAD
+        public string id { get; set; }
+        public string text { get; set; }
+        public string language { get; set; }
+        public float Sentiment { get; set; }
+=======
+        public string Id { get; set; }
+        public string Text { get; set; }
+        public string Language { get; set; }
+        public decimal Sentiment { get; set; }
+>>>>>>> 9f841710c3aaa42ab5712809eebb03775ed540a6
+    }
+
+
+
+    public class ResponseData
+    {
+        public Document[] Documents { get; set; }
+        public object[] Errors { get; set; }
+    }
+
+    public class Document
+    {
+        public float Score { get; set; }
+        public string Id { get; set; }
+    }
+
+}

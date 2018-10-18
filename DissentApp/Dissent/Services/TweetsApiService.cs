@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using Tweetinvi;
+using Tweetinvi.Controllers.Geo;
 using Tweetinvi.Models;
 using Tweetinvi.Parameters;
 
@@ -19,11 +20,16 @@ namespace Dissent.Services
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
-                GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
+                
+                SearchType = SearchResultType.Recent,
+
+
             };
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
             return matchingTweets;
+           
         }
+        
 
         public static List<Tweets> TweetsToTweetsModelList(List<ITweet> matchingTweets)
         {

@@ -12,32 +12,32 @@ namespace Dissent.Models
 
     public class Tweets
     {
-        public string Id { get; set; }
-        public string Text { get; set; }
-        public string Language { get; set; }
+        public string id { get; set; }
+        public string text { get; set; }
+        public string language { get; set; }
 
     }
 
     public class TweetsWithSentiment
     {
-        public string Id { get; set; }
-        public string Text { get; set; }
-        public string Language { get; set; }
-        public decimal Sentiment { get; set; }
+        public string id { get; set; }
+        public string text { get; set; }
+        public string language { get; set; }
+        public float Sentiment { get; set; }
     }
 
 
 
     public class ResponseData
     {
-        public Document[] Documents { get; set; }
-        public object[] Errors { get; set; }
+        public Document[] documents { get; set; }
+        public object[] errors { get; set; }
     }
 
     public class Document
     {
-        public float Score { get; set; }
-        public string Id { get; set; }
+        public float score { get; set; }
+        public string id { get; set; }
     }
 
 }

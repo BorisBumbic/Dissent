@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Dissent.Services
 {
     public class SentimentApiService
     {
-        public static async void RequestSentiment(List<Tweets> input, List<TweetsWithSentiment> sentimentList)
+        public static async Task RequestSentiment(List<Tweets> input, List<TweetsWithSentiment> sentimentList)
         {
             var client = new HttpClient();
             //var queryString = HttpUtility.ParseQueryString("");
@@ -31,15 +32,17 @@ namespace Dissent.Services
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 response = await client.PostAsync(uri, content);
 
-                var result = await response.Content.ReadAsStringAsync();
-           
-                for (int i = 0; i < sentimentList.Count; i++)
+                string result = await response.Content.ReadAsStringAsync();
+                var data = JsonConvert.DeserializeObject<ResponseData>(result);
+
+                //Task<List<TweetsWithSentiment>> list = new Task<List<TweetsWithSentiment>>();
+                for (int i = 0; i < Math.Min(sentimentList.Count, data.documents.Length); i++)
                 {
-                    //sentimentList[i].Sentiment = result[i].sentiment;
-
+                    sentimentList[i].Sentiment = data.documents[i].score;
                 }
-            }
+                //return sentimentList;
 
+            }
         }
     }
 }

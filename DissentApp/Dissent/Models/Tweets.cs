@@ -23,7 +23,7 @@ namespace Dissent.Models
         public string id { get; set; }
         public string text { get; set; }
         public string language { get; set; }
-        public decimal Sentiment { get; set; }
+        public float Sentiment { get; set; }
     }
 
 

@@ -32,42 +32,21 @@ namespace Dissent.Controllers
         }
 
         [HttpPost]
-        public ActionResult TwitterResult(string input)
+        public async Task<ActionResult> TwitterResult(string input)
         { 
 
 
-            List<ITweet> a = TweetsApiService.GetTweets(input);
+            List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
 
-            List<Tweets> b = TweetsApiService.TweetsToTweetsModelList(a);
+            List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
 
-            List<TweetsWithSentiment> c = TweetsApiService.TweetsToTweetsWithSentimentModelList(a);
+            List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
 
-            TweetsApiService.ConvertToLanguageCode(b);
+            TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
 
-            SentimentApiService.RequestSentiment(b,c);
+            /*List<TweetsWithSentiment> a = */await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
-
-
-            //    var searchParameter = new SearchTweetsParameters(input)
-            //    {
-            //        GeoCode = new GeoCode(59.3289, 18.0649, 15, DistanceMeasure.Kilometers)
-            //    };
-            //    List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
-            //    List<Tweets> tweetList = new List<Tweets>();
-            //    foreach (var item in matchingTweets)
-            //    {
-            //        tweetList.Add(new Tweets
-            //        {
-            //            id = item.IdStr,
-            //            text = item.FullText,
-            //            language = item.Language.ToString(),
-
-
-        //        });
-
-        //        //Services.SentimentApiServices.RequestSentiment(tweetList);
-        //    }
-            return Ok(c);
+            return Ok(tweetsFinalList);
     }
 }
 }

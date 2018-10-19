@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Tweetinvi;
-using Tweetinvi.Controllers.Geo;
 using Tweetinvi.Models;
 using Tweetinvi.Parameters;
 
@@ -10,23 +9,30 @@ namespace Dissent.Services
 {
     public class TweetsApiService
     {
-
         public static List<ITweet> GetTweets(string input)
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
+<<<<<<< HEAD
               
                 
+=======
+                SearchType = SearchResultType.Recent,
+>>>>>>> 3200466748bf21cfb9f8ec2b32a47e7b6ed02849
                 MaximumNumberOfResults = 20,
                 Lang= LanguageFilter.English,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly,
+<<<<<<< HEAD
                 SearchType = SearchResultType.Recent,
 
 
+=======
+                GeoCode = new GeoCode(10.00000, 10.0000, 15, DistanceMeasure.Kilometers)
+>>>>>>> 3200466748bf21cfb9f8ec2b32a47e7b6ed02849
             };
+
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
             return matchingTweets;
-           
         }
         
 

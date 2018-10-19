@@ -15,19 +15,14 @@ namespace Dissent.Services
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
-<<<<<<< HEAD
+              
                 
-                SearchType = SearchResultType.Recent,
-
-
-=======
-                //GeoCode = new GeoCode(59.3289, 18.0649, 150, DistanceMeasure.Kilometers),
                 MaximumNumberOfResults = 20,
-                Lang= LanguageFilter.Swedish,
+                Lang= LanguageFilter.English,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly,
                 SearchType = SearchResultType.Recent,
 
->>>>>>> 4fb7119267c905e21a71fee9a71b6ead360fa831
+
             };
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
             return matchingTweets;

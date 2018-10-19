@@ -5,10 +5,7 @@ using System.Threading.Tasks;
 
 namespace Dissent.Models
 {
-    public class TweetList<Tweets>
-    {
-
-    }
+    
 
     public class Tweets
     {

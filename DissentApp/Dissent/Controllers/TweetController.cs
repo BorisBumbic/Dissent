@@ -2,10 +2,7 @@
 using Dissent.Models;
 using Dissent.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
@@ -44,16 +41,9 @@ namespace Dissent.Controllers
 
             TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
 
-            /*List<TweetsWithSentiment> a = */await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
+            await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
-<<<<<<< HEAD
-
-
-       
-            return Ok(c);
+            return Ok();
         }
-=======
-            return Ok(tweetsFinalList);
->>>>>>> 4fb7119267c905e21a71fee9a71b6ead360fa831
     }
 }

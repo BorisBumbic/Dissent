@@ -15,11 +15,11 @@ namespace Dissent.Services
         public static async Task RequestSentiment(List<Tweets> input, List<TweetsWithSentiment> sentimentList)
         {
             var client = new HttpClient();
-            //var queryString = HttpUtility.ParseQueryString("");
+          
 
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "6712d8ff97cc46df9fff72c086d93709");
 
-            var uri = "https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment?" /*+ queryString*/;
+            var uri = "https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment?";
 
             HttpResponseMessage response;
 

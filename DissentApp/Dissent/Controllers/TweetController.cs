@@ -2,13 +2,11 @@
 using Dissent.Models;
 using Dissent.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 
 namespace Dissent.Controllers
 {
@@ -19,7 +17,7 @@ namespace Dissent.Controllers
 
         public TweetController()
         {
-            
+
             _credentials = MyCredentials.GenerateCredentials();
 
             Auth.SetCredentials(_credentials);
@@ -30,10 +28,37 @@ namespace Dissent.Controllers
         {
             return View();
         }
+        //[HttpPost]
+        //public IActionResult TwitterResult(string input)
+        //{
+        //    var searchParameter = new SearchTweetsParameters(input)
+        //    {
 
-        [HttpPost]
+
+        //        MaximumNumberOfResults = 20,
+        //        Lang = LanguageFilter.English,
+        //        GeoCode=new GeoCode(38.897,-77.038 ,10, DistanceMeasure.Kilometers)
+        //        //TweetSearchType = TweetSearchType.OriginalTweetsOnly,
+        //        // SearchType = SearchResultType.Recent,
+
+
+        //    };
+        //    List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();
+
+        //    //var v = new List<string>();
+        //    //foreach (var item in matchingTweets)
+        //    //{
+        //    //    v.Add(item.FullText.ToString());
+
+
+        //    //}
+
+        //    return Ok(matchingTweets);
+        //}
+
+        [HttpGet]
         public async Task<ActionResult> TwitterResult(string input)
-        { 
+        {
 
 
             List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
@@ -44,16 +69,22 @@ namespace Dissent.Controllers
 
             TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
 
-            /*List<TweetsWithSentiment> a = */await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
-
+            await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 <<<<<<< HEAD
 
 
-       
-            return Ok(c);
-        }
+               return Ok(tweetsFinalList);
+
+
+
+            //}
+
+
+
 =======
-            return Ok(tweetsFinalList);
->>>>>>> 4fb7119267c905e21a71fee9a71b6ead360fa831
+
+            return Ok();
+>>>>>>> 3200466748bf21cfb9f8ec2b32a47e7b6ed02849
+        }
     }
 }

@@ -3,7 +3,7 @@ new Vue({
     el: "#app",
     data: {
         sentimentResponse: [],
-        userinput: "Kalle"
+        userinput: ""
     },
     async created() {
         console.log("hej");

@@ -70,21 +70,13 @@ namespace Dissent.Controllers
             TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
-<<<<<<< HEAD
+
 
 
                return Ok(tweetsFinalList);
+            
 
-
-
-            //}
-
-
-
-=======
-
-            return Ok();
->>>>>>> 3200466748bf21cfb9f8ec2b32a47e7b6ed02849
+        
         }
     }
 }

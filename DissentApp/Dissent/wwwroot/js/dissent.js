@@ -1,9 +1,10 @@
-﻿
-new Vue({
-    el: "#app",
+﻿new Vue({
+    el: "#map",
     data: {
         sentimentResponse: [],
-        userinput: ""
+        userinput: "",
+        markerlat: 0,
+        markerlog: 0,
     },
     async created() {
         console.log("hej");

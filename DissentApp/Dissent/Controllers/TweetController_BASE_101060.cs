@@ -3,7 +3,6 @@ using Dissent.Models;
 using Dissent.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
@@ -38,7 +37,7 @@ namespace Dissent.Controllers
 
         //        MaximumNumberOfResults = 20,
         //        Lang = LanguageFilter.English,
-        //        GeoCode = new GeoCode(38.897, -77.038, 10, DistanceMeasure.Kilometers)
+        //        GeoCode=new GeoCode(38.897,-77.038 ,10, DistanceMeasure.Kilometers)
         //        //TweetSearchType = TweetSearchType.OriginalTweetsOnly,
         //        // SearchType = SearchResultType.Recent,
 
@@ -57,7 +56,7 @@ namespace Dissent.Controllers
         //    return Ok(matchingTweets);
         //}
 
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> TwitterResult(string input)
         {
 
@@ -72,18 +71,9 @@ namespace Dissent.Controllers
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
-<<<<<<< HEAD
-
-
-            return View(tweetsFinalList);
-
-
-
-=======
                return Ok(tweetsFinalList);
 
             //return Ok();
->>>>>>> 1b3ba1b23f45327bac346a78ce7de48298f320d9
         }
     }
 }

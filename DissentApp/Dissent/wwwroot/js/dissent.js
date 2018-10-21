@@ -11,7 +11,7 @@
     methods: {
 
         async showTweetSentiment() {
-            let response = await fetch("/Tweet/TwitterResult/?input="+this.userinput, {
+            let response = await fetch("/Tweet/TwitterResult/?input="+this.userinput,{
                 method: "get"
             });
 

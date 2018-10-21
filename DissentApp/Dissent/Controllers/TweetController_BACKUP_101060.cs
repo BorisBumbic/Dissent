@@ -7,7 +7,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
-using Tweetinvi.Parameters;
 
 namespace Dissent.Controllers
 {
@@ -18,7 +17,6 @@ namespace Dissent.Controllers
 
         public TweetController()
         {
-
             _credentials = MyCredentials.GenerateCredentials();
 
             Auth.SetCredentials(_credentials);
@@ -29,6 +27,9 @@ namespace Dissent.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
+        
+=======
         //[HttpPost]
         //public IActionResult TwitterResult(string input)
         //{
@@ -57,11 +58,10 @@ namespace Dissent.Controllers
         //    return Ok(matchingTweets);
         //}
 
+>>>>>>> 2010cfd2c2d25c35d24126d73f777fcc45093b23
         [HttpPost]
         public async Task<ActionResult> TwitterResult(string input)
         {
-
-
             List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
 
             List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);

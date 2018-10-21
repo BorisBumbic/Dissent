@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 
-
-﻿
-=======
->>>>>>> 1b3ba1b23f45327bac346a78ce7de48298f320d9
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,9 +64,4 @@ using System.Threading.Tasks;
 //            return a;
 //        }
 //    }
-<<<<<<< HEAD
-//
-﻿
 
-=======
->>>>>>> 1b3ba1b23f45327bac346a78ce7de48298f320d9

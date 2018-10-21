@@ -14,11 +14,12 @@ namespace Dissent.Services
             var searchParameter = new SearchTweetsParameters(input)
             {
 
-                SearchType = SearchResultType.Recent,
+                //SearchType = SearchResultType.Recent,
+                //FilterTweetsNotContainingGeoInformation = true,
 
-                MaximumNumberOfResults = 20,
+                MaximumNumberOfResults =5,
                 Lang= LanguageFilter.English,
-                TweetSearchType = TweetSearchType.OriginalTweetsOnly,
+                //TweetSearchType = TweetSearchType.OriginalTweetsOnly,
                 
             };
 

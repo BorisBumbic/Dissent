@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,8 +63,3 @@ using System.Threading.Tasks;
 //            return a;
 //        }
 //    }
-//
-﻿
-
-=======
->>>>>>> 533b1dc5131b89d3ffa0c5ab0b8aaa27217f3f90

@@ -13,6 +13,7 @@ namespace Dissent.Services
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
+<<<<<<< HEAD
               
                 
                 SearchType = SearchResultType.Recent,
@@ -22,6 +23,15 @@ namespace Dissent.Services
 
 
                 GeoCode = new GeoCode(10.00000, 10.0000, 15, DistanceMeasure.Kilometers)
+=======
+
+                SearchType = SearchResultType.Recent,
+
+                MaximumNumberOfResults = 20,
+                Lang= LanguageFilter.English,
+                TweetSearchType = TweetSearchType.OriginalTweetsOnly,
+                
+>>>>>>> 8bbc96222dbfcaa6a378d10960ea33b27713c79d
             };
 
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();

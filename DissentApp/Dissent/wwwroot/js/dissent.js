@@ -1,6 +1,5 @@
-﻿
-new Vue({
-    el: "#app",
+﻿new Vue({
+    el: "#map",
     data: {
         sentimentResponse: [],
         userinput: ""

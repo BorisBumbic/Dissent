@@ -9,7 +9,7 @@ namespace Dissent.Services
 {
     public class TweetsApiService
     {
-        public static List<ITweet> GetTweets(string input)
+        public static List<ITweet> GetTweets(string input, double lat, double lng, int radius)
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
@@ -35,8 +35,7 @@ namespace Dissent.Services
                 Lang= LanguageFilter.Swedish,
                 SearchType = SearchResultType.Recent,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly,
-                GeoCode = new GeoCode(59.334591, 18.063240, 15, DistanceMeasure.Kilometers)
->>>>>>> 55553375ec77cc6d76a0c3803ed1354aa3ec1129
+                GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };
 
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();

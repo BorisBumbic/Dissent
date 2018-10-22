@@ -12,13 +12,6 @@
             border: solid 1px #ddd;
             padding: 5px 10px;
         }
-
-        /*#map {
-            height: 100%;
-            margin-top: 30px;
-            width: 100%;
-        }*/
-        /* Optional: Makes the sample page fill the window. */
         html, body {
             height: 75%;
             margin: 0;
@@ -54,70 +47,6 @@
 
 <body>
 
-    <!--<div id="map"></div>
-
-    <script>
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 8,
-                center: new google.maps.LatLng(59.40316, 17.94479),
-                mapTypeId: 'hybrid'
-            });
-
-            var marker = new google.maps.Marker({
-                //position: standardLatLang,
-                position: { lat: 59.40316, lng: 17.94479 },
-                map: map,
-                title: 'Drop me at the desired location!',
-                draggable: true
-            });
-            google.maps.event.addListener(marker, 'dragend', function () {
-
-                let lat=marker.getPosition().lat();
-                let lng = marker.getPosition().lng();
-                byId("lat").value=lat
-                byId("lng").value=lng
-
-
-            });
-
-
-
-            // Create a <script> tag and set the USGS URL as the source.
-            var script = document.createElement('script');
-
-            // This example uses a local copy of the GeoJSON stored at
-            http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-            src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-            document.getElementsByTagName('head')[0].appendChild(script);
-
-            map.data.setStyle(function (feature) {
-                var magnitude = feature.getProperty('mag');
-                return {
-                    icon: getCircle(magnitude)
-                };
-            });
-        }
-
-        function getCircle(magnitude) {
-            return {
-                path: google.maps.SymbolPath.CIRCLE,
-                fillColor: 'green',
-                fillOpacity: .2,
-                scale: 10, // Math.pow(2, magnitude) / 2,
-                strokeColor: 'white',
-                strokeWeight: .5
-            };
-        }
-
-        function eqfeed_callback(results) {
-            map.data.addGeoJson(results);
-        }
-        function byId(id) {
-            return document.getElementById(id);
-        }
-    </script>-->
 
     <div id="app" class="wrapper">
         <div id="content">
@@ -142,50 +71,8 @@
             </table>
         </div>
     </div>
-
-    <!--<input type="text" id="userInput" />
-    <input type="text" id="lng" value="" />
-    <input type="text" id="lat" value="" />
-    <button onclick="showTweetSentiment()"> ok </button>
-    <table id="tHead">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Text</th>
-                <th>Language</th>
-                <th>sentiment</th>
-
-            </tr>
-        </thead>
-        <tbody id="sentimentResult"></tbody>
-    </table>-->
-
-
-    <!--<div id="map">
-
-        <input v-model="userinput" />
-
-        <button @click="showTweetSentiment()">Ok</button>
-
-        <table>
-            <tr v-for="x in sentimentResponse">
-                <td>{{x.text}}</td>
-                <td>{{x.sentiment}}</td>
-
-            </tr>
-        </table>
-
-    </div>-->
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="/js/dissent.js"></script>
-
-   
-
-
-    <!--<script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap">
-    </script>-->
+<script src="js/dissent.js"></script>">
 </body>
 </html>

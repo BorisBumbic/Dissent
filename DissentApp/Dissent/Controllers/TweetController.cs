@@ -43,17 +43,7 @@ namespace Dissent.Controllers
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
-<<<<<<< HEAD
-
-
             return View(tweetsFinalList);
-
-
-
-
-=======
-            return View(tweetsFinalList);
->>>>>>> 55553375ec77cc6d76a0c3803ed1354aa3ec1129
         }
     }
 }

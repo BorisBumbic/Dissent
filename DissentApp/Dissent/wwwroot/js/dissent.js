@@ -2,34 +2,6 @@
 
  
 
-//async function showTweetSentiment() {
-//    let userinput = "";
-//    byId("userInput").value= userinput
-//    let response = await fetch("/Tweet/TwitterResult/?input=" + userinput, {
-//        method: "get"
-//    });
-//    let html
-//    let sentimentResponse = await response.json();
-//    for (let result of sentimentResponse) {
-
-//        html +=
-//            `<tr>
-               
-//                <td>${ result.text}</td>
-//                <td>${ result.language}</td>
-//                <td>${ result.sentiment}</td>
-              
-//            </tr>`
-//    }
-
-//    byId("sentimentResult").innerHTML = html;
-
-
-//}  
-
-//function byId(id) {
-//    return document.getElementById(id);
-//}
 
 var app;
 
@@ -70,23 +42,17 @@ function initMap() {
                 });
                 google.maps.event.addListener(this.marker, 'dragend', function () {
 
-                    //this.lat = this.marker.location.lat();
-                    //this.lng = this.marker.location.lng();
-                    //document.getElementById("lat").value = this.getPosition().lat();
-                    //document.getElementById("lng").value = this.getPosition().lng();
-                    //this.lat=this.latlng.lat()
-                    //this.lng=this.latlng.lng()
 
                     app.lat = this.getPosition().lat();
                     app.lng = this.getPosition().lng();
-                    //this.lat = geometry.location.lat();
+                    
                   
                 });
                
                
             },
 
-            // xxxxxxxx?input=qqqq&lat=qqqq&lng=qqqq&radius=qqqqqqq
+          
             async showTweetSentiment() {
                 let response = await fetch("/Tweet/TwitterResult/?input=" + this.userinput+"&lat=" + this.lat+ "&lng=" + this.lng+"&radius="+this.radius,{
                 method: "get"
@@ -102,24 +68,4 @@ function initMap() {
 
     
 
-//new Vue({
-//    el: "#map",
-//    data: {
-//        sentimentResponse: [],
-//        userinput: "",
-     
-//    },
-    
-//    methods: {
-
-//        async showTweetSentiment() {
-//            let response = await fetch("/Tweet/TwitterResult/?input="+this.userinput,{
-//                method: "get"
-//            });
-
-//            this.sentimentResponse = await response.json();
-//            console.log("sentimentResponse", this.sentimentResponse);
-//        }
-//    }
-//});
 

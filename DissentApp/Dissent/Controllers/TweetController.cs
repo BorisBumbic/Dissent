@@ -28,10 +28,12 @@ namespace Dissent.Controllers
             return View();
         }
 
+        // xxxxxxxx?input=qqqq&lat=qqqq&lng=qqqq&radius=qqqqqqq
+
         [HttpPost]
-        public async Task<ActionResult> TwitterResult(string input)
+        public async Task<ActionResult> TwitterResult(string input, double lat, double lng, int radius)
         {
-            List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
+            List<ITweet> incomingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
 
             List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
 

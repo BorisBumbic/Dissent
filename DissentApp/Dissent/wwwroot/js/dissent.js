@@ -30,8 +30,11 @@
 //function byId(id) {
 //    return document.getElementById(id);
 //}
+
+var app;
+
 function initMap() {
-    var app = new Vue({
+    app = new Vue({
         el: "#app",
         data: {
            
@@ -42,6 +45,7 @@ function initMap() {
             userinput: "",
             lat: "",
             lng: "",
+            radius:""
         },
         async created() {
 
@@ -68,15 +72,23 @@ function initMap() {
 
                     //this.lat = this.marker.location.lat();
                     //this.lng = this.marker.location.lng();
-                    document.getElementById("lat").value = this.getPosition().lat();
-                    document.getElementById("lng").value = this.getPosition().lng();
+                    //document.getElementById("lat").value = this.getPosition().lat();
+                    //document.getElementById("lng").value = this.getPosition().lng();
+                    //this.lat=this.latlng.lat()
+                    //this.lng=this.latlng.lng()
+
+                    app.lat = this.getPosition().lat();
+                    app.lng = this.getPosition().lng();
+                    //this.lat = geometry.location.lat();
                   
                 });
                
                
             },
+
+            // xxxxxxxx?input=qqqq&lat=qqqq&lng=qqqq&radius=qqqqqqq
             async showTweetSentiment() {
-                let response = await fetch("/Tweet/TwitterResult/?input="+this.userinput,{
+                let response = await fetch("/Tweet/TwitterResult/?input=" + this.userinput+"&lat=" + this.lat+ "&lng=" + this.lng+"&radius="+this.radius,{
                 method: "get"
                  });
 

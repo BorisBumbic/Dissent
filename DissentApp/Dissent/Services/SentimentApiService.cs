@@ -35,6 +35,9 @@ namespace Dissent.Services
                 string result = await response.Content.ReadAsStringAsync();
                 var data = JsonConvert.DeserializeObject<ResponseData>(result);
 
+                if (data == null || data.documents == null)
+                    return;
+
                 for (int i = 0; i < Math.Min(sentimentList.Count, data.documents.Length); i++)
                 {
                     sentimentList[i].Sentiment = data.documents[i].score;

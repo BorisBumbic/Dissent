@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+﻿var app = new Vue({
+=======
 ﻿
 
  
@@ -7,14 +10,20 @@ var app;
 
 function initMap() {
     app = new Vue({
+>>>>>>> b492ce14b945b24f13019de3a6b426142b5043b8
         el: "#app",
         data: {
            
             map: "",
             sentimentResponse: [],
             userinput: "",
+<<<<<<< HEAD
+            latLng: [lat = 59.40316, lng = 17.94479]
+=======
             lat: "",
             lng: "",
+            radius:""
+>>>>>>> b492ce14b945b24f13019de3a6b426142b5043b8
         },
         async created() {
 
@@ -62,26 +71,9 @@ function initMap() {
     });
 
 
+
+<<<<<<< HEAD
     
-
-//new Vue({
-//    el: "#map",
-//    data: {
-//        sentimentResponse: [],
-//        userinput: "",
-     
-//    },
-    
-//    methods: {
-
-//        async showTweetSentiment() {
-//            let response = await fetch("/Tweet/TwitterResult/?input="+this.userinput,{
-//                method: "get"
-//            });
-
-//            this.sentimentResponse = await response.json();
-//            console.log("sentimentResponse", this.sentimentResponse);
-//        }
-//    }
-//});
+=======
+>>>>>>> b492ce14b945b24f13019de3a6b426142b5043b8
 

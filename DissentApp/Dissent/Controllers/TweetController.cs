@@ -30,7 +30,7 @@ namespace Dissent.Controllers
 
         // xxxxxxxx?input=qqqq&lat=qqqq&lng=qqqq&radius=qqqqqqq
 
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> TwitterResult(string input, double lat, double lng, int radius)
         {
             List<ITweet> incomingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
@@ -43,7 +43,7 @@ namespace Dissent.Controllers
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
-            return View(tweetsFinalList);
+            return Ok(tweetsFinalList);
         }
     }
 }

@@ -1,14 +1,15 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestProject1
+namespace DissentTest
 {
     [TestClass]
-    public class 
+    public class SentimentApiServiceTest
     {
         [TestMethod]
         public void TestMethod1()
         {
+            var result = Dissent.SentimentApiService.RequestSentiment()
         }
     }
 }

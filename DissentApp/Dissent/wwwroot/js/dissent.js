@@ -2,11 +2,11 @@
 
  
 
-
-var app;
-
 function initMap() {
-    app = new Vue({
+}
+
+
+ var app = new Vue({
         el: "#app",
         data: {
 
@@ -261,4 +261,3 @@ function initMap() {
 
 
     )
-}

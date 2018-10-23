@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,9 +18,7 @@ namespace Dissent.Models
         public string Id { get; set; }
         public string Text { get; set; }
         public string Language { get; set; }
-
     }
-    
 
     public class TweetsWithSentiment
     {
@@ -28,10 +27,10 @@ namespace Dissent.Models
         public string Text { get; set; }
         public string Language { get; set; }
         public float Sentiment { get; set; }
+
+        [JsonIgnore]
         public Query SearchQuery { get; set; }
     }
-
-
 
     public class ResponseData
     {
@@ -44,5 +43,4 @@ namespace Dissent.Models
         public float Score { get; set; }
         public string Id { get; set; }
     }
-
 }

@@ -15,45 +15,30 @@ namespace Dissent.Controllers
     public class TweetController : Controller
     {
         private readonly ITwitterCredentials _credentials;
-        private readonly TwitterDbcontext _context;
 
-        public TweetController(TwitterDbcontext context)
+
+        public TweetController(TweetsApiService tweetsApiService)
         {
-            _credentials = MyCredentials.GenerateCredentials();
+            //_credentials = MyCredentials.GenerateCredentials();
 
-            Auth.SetCredentials(_credentials);
-            _context = context;
+            //Auth.SetCredentials(_credentials);
+            _tweetsApiService = tweetsApiService;
         }
+
+        public TweetsApiService _tweetsApiService;
 
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-  
-        
-
-       
 
         [HttpGet]
-        public async Task<ActionResult> TwitterResult(string input, double lat, double lng, int radius)
+        public async Task<IActionResult> TwitterResult(string input, double lat, double lng, int radius)
         {
-            List<ITweet> incomingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
-
-            List<RawTweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
-
-            List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
-
-            TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
-
-            await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
-
-            _context.AddRange(tweetsFinalList);
-            _context.SaveChanges();
-
+            List<TweetsWithSentiment> tweetsFinalList = await _tweetsApiService.GetTweetsInRegion(input, lat, lng, radius);
 
             return Ok(tweetsFinalList);
-           
         }
     }
 }

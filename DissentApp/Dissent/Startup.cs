@@ -1,4 +1,5 @@
 ﻿using Dissent.Models;
+using Dissent.Services;
 using Dissent.wwwroot.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,7 @@ namespace Dissent
                     options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = TweetDb;"));
 
                 services.AddTransient<Repository, Repository>();
+                services.AddScoped<TweetsApiService>();
                 services.AddMvc();
             }
             services.Configure<CookiePolicyOptions>(options =>

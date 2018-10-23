@@ -1,15 +1,13 @@
-﻿
+﻿<style>
+    table {
+        border-spacing: 0;
+        width: 100%;
+    }
 
-    <style>
-        table {
-            border-spacing: 0;
-            width: 100%;
-        }
-
-        td {
-            border: solid 1px #ddd;
-            padding: 5px 10px;
-        }
+    td {
+        border: solid 1px #ddd;
+        padding: 5px 10px;
+    }
 
     .wrapper .map {
         padding: 100px;
@@ -19,36 +17,32 @@
     }
 </style>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
-
-<div id="app">
+@*<@*div id="app">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8">*@
 
-
-<div id="app">
+@*<div id="app">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8">*@
 
-    <div id="app" class="wrapper" class="col-lg-offset-6">
-        <div id="content">
-            <div id="map" class="map"></div>
+<div id="app" class="wrapper col-lg-offset-6">
+    <div id="content">
+        <div id="map" class="map"></div>
 
-        </div>
-        <div id="searchBox">
+    </div>
+    <div id="searchBox">
 
-            <div class="form-group">
+        @*<div class="form-group">
                 <label>Search:</label>
                 <input v-model="userinput" class="form-control" />
-            </div>
+            </div>*@
 
-            Search:<input v-model="userinput" />
-            Enter Radius:<input v-model="radius" />
-            Latitude:<input v-model="lat" />
-            Longitude:<input v-model="lng" />
+        Search:<input v-model="userinput" />
+        Enter Radius:<input v-model="radius" />
+        Latitude:<input v-model="lat" />
+        Longitude:<input v-model="lng" />
 
-            <div class="form-group">
+        @*<div class="form-group">
                 <label>Latitude:</label>
                 <input v-model="lat" class="form-control" />
             </div>
@@ -56,30 +50,24 @@
             <div class="form-group">
                 <label>Longitude:</label>
                 <input v-model="lng" class="form-control" />
-            </div>
+            </div>*@
 
-            <button v-on:click="showTweetSentiment()">Ok</button>
+        <button v-on:click="showTweetSentiment()">Ok</button>
 
-            <table>
-                <tr v-for="x in sentimentResponse">
-                    <td>{{x.text}}</td>
-                    <td>{{x.sentiment}}</td>
+        <table>
+            <tr v-for="x in sentimentResponse">
+                <td>{{x.text}}</td>
+                <td>{{x.sentiment}}</td>
 
             </tr>
         </table>
     </div>
 </div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <script src="/js/dissent.js"></script>
-
-
-
-
-    <!--<script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap">
-    </script>-->
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="~/js/dissent.js"></script>
+<!--<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap">
+</script>-->

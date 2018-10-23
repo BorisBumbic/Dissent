@@ -1,10 +1,5 @@
-﻿
-
- 
-
-function initMap() {
+﻿function initMap() {
 }
-
 
  var app = new Vue({
         el: "#app",
@@ -12,7 +7,7 @@ function initMap() {
 
             map: "",
             sentimentResponse: [],
-            userinput: "Stockholm",
+            userinput: "Trump",
             lat: "59.3293",
             lng: "18.0686",
             radius: 20
@@ -219,11 +214,8 @@ function initMap() {
                 });
 
                 this.marker = new google.maps.Marker({
-
                     position: { lat: 59.3293, lng: 18.0686 },
                     map: map,
-
-
                     draggable: true
                 });
                 google.maps.event.addListener(this.marker, 'mouseover', function () {
@@ -235,11 +227,8 @@ function initMap() {
                 });
                 google.maps.event.addListener(this.marker, 'dragend', function () {
 
-
                     app.lat = this.getPosition().lat();
                     app.lng = this.getPosition().lng();
-
-
                 });
 
 
@@ -256,8 +245,4 @@ function initMap() {
             }
         }
 
-     }
-
-
-
-    )
+     })

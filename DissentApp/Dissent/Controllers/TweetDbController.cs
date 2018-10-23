@@ -1,8 +1,5 @@
-﻿using Dissent.Models;
-using Dissent.wwwroot.Models;
+﻿using Dissent.wwwroot.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace Dissent.Controllers
 {
@@ -15,10 +12,11 @@ namespace Dissent.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.text.Include("incomingTweets").ToListAsync());
-        }
+        //utkommenterar för nu//BB
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.text.Include("incomingTweets").ToListAsync());
+        //}
 
     }
 }

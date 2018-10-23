@@ -1,7 +1,6 @@
 ﻿using Dissent.Credentials;
 using Dissent.Models;
 using Dissent.wwwroot.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +12,6 @@ namespace Dissent.Services
 {
     public class TweetsApiService
     {
-        //private readonly ITwitterCredentials _credentials;
         private readonly TwitterDbcontext _context;
         private readonly ITwitterCredentials _credentials;
 
@@ -31,8 +29,8 @@ namespace Dissent.Services
             {
                 MaximumNumberOfResults =5,
                 Lang= LanguageFilter.Swedish,
-                SearchType = SearchResultType.Recent,
-                TweetSearchType = TweetSearchType.All,
+                SearchType = SearchResultType.Recent, //vi måste titta på exakt vad 'recent' gör. ofta får man inte några resultat alls på rätt vanliga saker.//BB
+                TweetSearchType = TweetSearchType.OriginalTweetsOnly, //jag la till endast original tweets//BB
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };
 
@@ -82,7 +80,7 @@ namespace Dissent.Services
             }
         }
 
-        public async Task<List<TweetsWithSentiment>> GetTweetsInRegion(string input, double lat, double lng, int radius)
+        public async Task<List<TweetsWithSentiment>> GetTweetsInRegionWithSentiment(string input, double lat, double lng, int radius)
         {
             List<ITweet> incomingTweets = GetTweets(input, lat, lng, radius);
 
@@ -94,8 +92,8 @@ namespace Dissent.Services
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
-            SaveQueryAndResponseToDb(tweetsFinalList, input);
-
+                SaveQueryAndResponseToDb(tweetsFinalList, input);
+            
             return tweetsFinalList;
         }
 

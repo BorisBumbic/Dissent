@@ -15,7 +15,6 @@ namespace Dissent.Services
         public static async Task RequestSentiment(List<RawTweets> input, List<TweetsWithSentiment> sentimentList)
         {
             var client = new HttpClient();
-          
 
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "6712d8ff97cc46df9fff72c086d93709");
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dissent", "Dissent\Dissent.csproj", "{96A1EF35-137B-412A-AAB8-CCA1BF71ADDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject2", "UnitTestProject2\UnitTestProject2.csproj", "{D3915CB4-4C7F-4046-AECA-286D855228E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DissentTest", "UnitTestProject2\DissentTest.csproj", "{D3915CB4-4C7F-4046-AECA-286D855228E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -29,7 +29,7 @@ namespace Dissent.Services
             {
                 MaximumNumberOfResults =5,
                 Lang= LanguageFilter.Swedish,
-                SearchType = SearchResultType.Recent, //vi måste titta på exakt vad 'recent' gör. ofta får man inte några resultat alls på rätt vanliga saker.//BB
+                SearchType = SearchResultType.Mixed, //vi måste titta på exakt vad 'recent' gör. ofta får man inte några resultat alls på rätt vanliga saker.//BB
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly, //jag la till endast original tweets//BB
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };

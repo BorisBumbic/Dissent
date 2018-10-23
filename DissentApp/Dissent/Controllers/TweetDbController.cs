@@ -17,7 +17,7 @@ namespace Dissent.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TweetsWithSentiment.Include("incomingTweets").ToListAsync());
+            return View(await _context.text.Include("incomingTweets").ToListAsync());
         }
 
         [HttpPost]

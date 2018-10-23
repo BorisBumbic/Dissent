@@ -40,7 +40,12 @@ namespace Dissent.Controllers
         {
             List<ITweet> incomingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
 
-            List<RawTweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
+            List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
+
+
+
+            _context.AddRange(tweetsMiddleList);
+            _context.SaveChanges();
 
             List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
 
@@ -52,8 +57,10 @@ namespace Dissent.Controllers
             _context.SaveChanges();
 
 
+            return Ok (tweetsFinalList);
+=======
             return Ok(tweetsFinalList);
-           
+>>>>>>> 5470e61ea1408d9efb6ccac3507fb2a086e49d88
         }
     }
 }

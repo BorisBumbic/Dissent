@@ -50,7 +50,7 @@ nav {
     display: block;
 }
 
-#TwitterIndex {
+/*#TwitterIndex {
     padding: 250px;
     left: 50%;
     margin-left: -50px !important;
@@ -66,12 +66,11 @@ nav {
 li {
  
     margin-left: 4px;
-    padding:18px 1px 1px 1px;
-    
-}
-#sitelogo{
-    margin-top: 4px;
-    height:400px;
-    width:400px;
-}
+    padding: 18px 1px 1px 1px;
+}*/
 
+/*#sitelogo {
+    margin-top: 4px;
+    height: 400px;
+    width: 400px;
+}*/

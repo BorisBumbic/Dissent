@@ -18,13 +18,24 @@
 <body>
     <div id="map"></div>
     <script>
-      var map;
+        var map;
+        var standardLatLang = { lat: 59.3289, lng: 18.0649 };
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
-          center: {lat: -33.865427, lng: 151.196123},
+            center: standardLatLang,
           mapTypeId: 'terrain'
         });
+
+
+          // titta här!!
+          var marker = new google.maps.Marker({
+              position:  standardLatLang,
+              map: map,
+              title: 'Drop me at the desired location!',
+              draggable:true,
+          });
+
 
         // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');

@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5470e61ea1408d9efb6ccac3507fb2a086e49d88
 
-﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +68,8 @@ using System.Threading.Tasks;
 //            return a;
 //        }
 //    }
-//
-﻿
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5470e61ea1408d9efb6ccac3507fb2a086e49d88

@@ -9,17 +9,15 @@ namespace Dissent.Services
 {
     public class TweetsApiService
     {
-        public static List<ITweet> GetTweets(string input)
+        public static List<ITweet> GetTweets(string input, double lat, double lng, int radius)
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
-
+                MaximumNumberOfResults =5,
+                Lang= LanguageFilter.Swedish,
                 SearchType = SearchResultType.Recent,
-
-                MaximumNumberOfResults = 20,
-                Lang= LanguageFilter.English,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly,
-                
+                GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };
 
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();

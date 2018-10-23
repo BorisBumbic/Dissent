@@ -36,9 +36,22 @@ namespace Dissent.Controllers
         [HttpGet]
         public async Task<IActionResult> TwitterResult(string input, double lat, double lng, int radius)
         {
-            List<TweetsWithSentiment> tweetsFinalList = await _tweetsApiService.GetTweetsInRegion(input, lat, lng, radius);
+            List<ITweet> incomingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
+
+            List<RawTweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
+
+            List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
+
+            TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
+
+            await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
+
+            _context.AddRange(tweetsFinalList);
+            _context.SaveChanges();
+
 
             return Ok(tweetsFinalList);
+           
         }
     }
 }

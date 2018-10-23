@@ -34,10 +34,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index"><spam></spam></a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="SecondHome" asp-action="Index">Second</a></li>
+                  
                     <li><a asp-area="" asp-controller="Tweet" asp-action="Index">tweet</a></li>
-                    <li><a asp-area="" asp-controller="StreamTweet" asp-action="Index">Streamtweet</a></li>
-                    <li><a asp-area="" asp-controller="Map" asp-action="ShowMaps">Map</a></li>
+                
+                  
                 </ul>
             </div>
         </div>
@@ -56,7 +56,11 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+<<<<<<< HEAD
+ 
+=======
+
+>>>>>>> dd1c17429bcc90ab129b0bc8b83fbf4e20043853
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
@@ -71,7 +75,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+
     </environment>
 
     @RenderSection("Scripts", required: false)

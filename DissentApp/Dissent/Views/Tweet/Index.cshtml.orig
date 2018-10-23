@@ -1,34 +1,200 @@
-﻿@model IEnumerable<Tweetinvi.Models.ITweet>
-
-<div class="row" id="TwitterIndex">
-    
-    <div class="col-md-4">
-        <form asp-action="TwitterResult">
 <<<<<<< HEAD
-        
+﻿<style>
+ #app {
+        margin-top: 130px;
+    }
 =======
-            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Name" class="control-label"></label>
-            <input asp-for="input" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>*@
+﻿
+<<<<<<< HEAD
 
-            <br />
+<style>
+    table {
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    td {
+        border: solid 1px #ddd;
+        padding: 5px 10px;
+    }
+
+    .wrapper .map {
+        padding: 100px;
+        height: 100%;
+        width: 100%;
+        float: right;
+    }
+</style>
+
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y"></script>
 
 
 
 
-            @*<div  class="col-md-4">*@
->>>>>>> 24c74219050ae15fb56eb9919eefd6b9949f05e0
-           
-            <label for="input">Twitter Name:</label>
-            <input type="text" name="input" />
-            <div class="form-group">
-                <input type="submit" value="View Result" class="btn btn-default" />
+<div id="app" class="wrapper" >
+    <div id="content">
+        <div id="map" class="map"></div>
+
+    </div>
+    <div id="searchBox">
+=======
+<style>
+    /*table {
+                border-spacing: 0;
+                width: 100%;
+            }
+>>>>>>> a7d05fbaf88ab24f810f863f1f78c8ec61bf8404
+
+    #wrapper {
+        display: flex;
+        width: 100%;
+        align-items: initial;
+        height: 500px;
+    }
+
+<<<<<<< HEAD
+    #content {
+        width: 100%;
+        height: 500px;
+        right: initial;
+        text-align: right;
+    }
+
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
+
+=======
+    #app {
+        margin-top: 130px;
+    }
+
+    #wrapper {
+        display: flex;
+        width: 100%;
+        align-items: initial;
+        height: 500px;
+    }
+
+    #content {
+        width: 100%;
+        height: 500px;
+        right: initial;
+        text-align: right;
+    }
+
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
+>>>>>>> a7d05fbaf88ab24f810f863f1f78c8ec61bf8404
+
+<div id="app">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div id="wrapper">
+                <div id="content">
+                    <div id="map" class="map">
+                    </div>
+                </div>
             </div>
 
+<div id="app">
+    <div class="row">
+        <div class="col-md-8">
 
-        </form>
+            <div id="wrapper">
+                <div id="content">
+                    <div id="map" class="map">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+>>>>>>> dd1c17429bcc90ab129b0bc8b83fbf4e20043853
+
+            <div class="form-group">
+                <label>Search:</label>
+                <input v-model="userinput" class="form-control" />
+            </div>
+
+<<<<<<< HEAD
+        Search:<input v-model="userinput" />
+        Enter Radius:<input v-model="radius" />
+        Latitude:<input v-model="lat" />
+        Longitude:<input v-model="lng" />
+=======
+            <div class="form-group">
+                <label>Enter Radius:</label>
+                <input v-model="radius" class="form-control" />
+            </div>
+>>>>>>> dd1c17429bcc90ab129b0bc8b83fbf4e20043853
+
+            <div class="form-group">
+                <label>Latitude:</label>
+                <input v-model="lat" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Longitude:</label>
+                <input v-model="lng" class="form-control" />
+            </div>
+
+<<<<<<< HEAD
+        <button v-on:click="showTweetSentiment()">Ok</button>
+
+        <table>
+            <tr v-for="x in sentimentResponse">
+                <td>{{x.text}}</td>
+                <td>{{x.sentiment}}</td>
+=======
+            <div class="form-group">
+                <button v-on:click="showTweetSentiment()" class="form-control">Ok</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table>
+                <tr v-for="x in sentimentResponse">
+                    <td>{{x.text}}</td>
+                    <td>{{x.sentiment}}</td>
+>>>>>>> dd1c17429bcc90ab129b0bc8b83fbf4e20043853
+
+            </tr>
+        </table>
     </div>
 </div>
+
+<<<<<<< HEAD
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="/js/dissent.js"></script>
+
+
+
+
+
+<!--<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap">
+</script>-->
+=======
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script src="/js/dissent.js"></script>
+>>>>>>> dd1c17429bcc90ab129b0bc8b83fbf4e20043853

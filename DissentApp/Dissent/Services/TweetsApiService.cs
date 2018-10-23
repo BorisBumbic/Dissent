@@ -14,9 +14,9 @@ namespace Dissent.Services
             var searchParameter = new SearchTweetsParameters(input)
             {
                 MaximumNumberOfResults =5,
-                //Lang= LanguageFilter.Swedish,
+                Lang= LanguageFilter.Swedish,
                 SearchType = SearchResultType.Recent,
-                TweetSearchType = TweetSearchType.OriginalTweetsOnly,
+                TweetSearchType = TweetSearchType.All,
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };
 
@@ -50,7 +50,7 @@ namespace Dissent.Services
             {
                 sentimentList.Add(new TweetsWithSentiment
                 {
-                    Id = item.IdStr,
+                    TweetId = item.IdStr,
                     Text = item.FullText,
                     Language = item.Language.ToString(),
                 });

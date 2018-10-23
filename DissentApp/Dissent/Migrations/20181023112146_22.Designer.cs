@@ -9,29 +9,34 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dissent.Migrations
 {
     [DbContext(typeof(TwitterDbcontext))]
-    [Migration("20181022151152_migge1")]
-    partial class migge1
+    [Migration("20181023112146_22")]
+    partial class _22
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Dissent.Models.Tweets", b =>
+            modelBuilder.Entity("Dissent.Models.TweetsWithSentiment", b =>
                 {
-                    b.Property<string>("id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("language");
+                    b.Property<string>("Language");
 
-                    b.Property<string>("text");
+                    b.Property<float>("Sentiment");
 
-                    b.HasKey("id");
+                    b.Property<string>("Text");
 
-                    b.ToTable("Text");
+                    b.Property<string>("TweetId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TweetsWithSentiment");
                 });
 #pragma warning restore 612, 618
         }

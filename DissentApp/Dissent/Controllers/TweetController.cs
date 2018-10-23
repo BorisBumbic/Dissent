@@ -42,19 +42,17 @@ namespace Dissent.Controllers
 
             List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
 
-
-
-            _context.AddRange(tweetsMiddleList);
-            _context.SaveChanges();
-
             List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
 
             TweetsApiService.ConvertToLanguageCode(tweetsMiddleList);
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
+            _context.AddRange(tweetsFinalList);
+            _context.SaveChanges();
 
-            return Ok (tweetsFinalList);
+
+            return Ok(tweetsFinalList);
            
         }
     }

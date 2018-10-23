@@ -28,7 +28,7 @@ namespace Dissent.Controllers
             return View();
         }
 
-        // xxxxxxxx?input=qqqq&lat=qqqq&lng=qqqq&radius=qqqqqqq
+       
 
         [HttpGet]
         public async Task<ActionResult> TwitterResult(string input, double lat, double lng, int radius)

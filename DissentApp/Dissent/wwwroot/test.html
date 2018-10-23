@@ -20,24 +20,31 @@
         .wrapper {
             display: flex;
             width: 100%;
-            align-items: stretch;
+            align-items:initial;
         }
         .w #searchBox {
             width: 100%;
-            align-items: stretch;
+            align-items: center;
         }
 
         #content {
             width: 100%;
-            /*padding: 20px;*/
+            padding: 20px;
             min-height: 100vh;
-            transition: all 0.3s;
+            /*transition: all 0.9s;*/
+            right:initial;
+            text-align:right;
+           
+            
+            
         }
 
-        .map {
-            height: 100%;
-            width: 100%;
+        .wrapper .map {
+            height: 90%;
+            width: 90%;
+            float:right;
         }
+        
     </style>
   
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
@@ -55,12 +62,14 @@
 
         </div>
         <div id="searchBox">
+            
+
             Search:<input v-model="userinput" />
             Enter Radius:<input v-model="radius" />
             Latitude:<input v-model="lat" />
             Longitude:<input v-model="lng" />
-         
-            
+
+
 
             <button @click="showTweetSentiment()">Ok</button>
 

@@ -9,17 +9,17 @@ namespace Dissent.Models
 
     public class Tweets
     {
-        public string id { get; set; }
-        public string text { get; set; }
-        public string language { get; set; }
+        public string Id { get; set; }
+        public string Text { get; set; }
+        public string Language { get; set; }
 
     }
 
     public class TweetsWithSentiment
     {
-        public string id { get; set; }
-        public string text { get; set; }
-        public string language { get; set; }
+        public string Id { get; set; }
+        public string Text { get; set; }
+        public string Language { get; set; }
         public float Sentiment { get; set; }
     }
 
@@ -28,13 +28,13 @@ namespace Dissent.Models
     public class ResponseData
     {
         public Document[] documents { get; set; }
-        public object[] errors { get; set; }
+        public object[] Errors { get; set; }
     }
 
     public class Document
     {
-        public float score { get; set; }
-        public string id { get; set; }
+        public float Score { get; set; }
+        public string Id { get; set; }
     }
 
 }

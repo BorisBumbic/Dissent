@@ -20,5 +20,6 @@ new Vue({
             console.log("sentimentResponse", this.sentimentResponse);
         }
     }
+
 });
 

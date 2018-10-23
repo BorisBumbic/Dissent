@@ -38,7 +38,7 @@ namespace Dissent.Services
                 //Task<List<TweetsWithSentiment>> list = new Task<List<TweetsWithSentiment>>();
                 for (int i = 0; i < Math.Min(sentimentList.Count, data.documents.Length); i++)
                 {
-                    sentimentList[i].Sentiment = data.documents[i].score;
+                    sentimentList[i].Sentiment = data.documents[i].Score;
                 }
                 //return sentimentList;
 

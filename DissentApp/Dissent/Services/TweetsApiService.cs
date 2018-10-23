@@ -36,9 +36,9 @@ namespace Dissent.Services
                 if(item.Language == Language.English || item.Language == Language.Swedish)
                 tweetList.Add(new Tweets
                 {
-                    id = item.IdStr,
-                    text = item.FullText,
-                    language = item.Language.ToString(),
+                    Id = item.IdStr,
+                    Text = item.FullText,
+                    Language = item.Language.ToString(),
                 });
 
             }
@@ -52,9 +52,9 @@ namespace Dissent.Services
             {
                 sentimentList.Add(new TweetsWithSentiment
                 {
-                    id = item.IdStr,
-                    text = item.FullText,
-                    language = item.Language.ToString(),
+                    Id = item.IdStr,
+                    Text = item.FullText,
+                    Language = item.Language.ToString(),
                 });
 
             }
@@ -65,10 +65,10 @@ namespace Dissent.Services
         {
             foreach (var item in tweetList)
             {
-                if (item.language == "English")
-                    item.language = "en";
-                if (item.language == "Swedish")
-                    item.language = "sv";
+                if (item.Language == "English")
+                    item.Language = "en";
+                if (item.Language == "Swedish")
+                    item.Language = "sv";
             }
         }
     }

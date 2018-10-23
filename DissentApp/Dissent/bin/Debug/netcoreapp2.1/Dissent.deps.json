@@ -26,7 +26,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
-          "TweetinviAPI": "4.0.0"
+          "TweetinviAPI": "4.0.0",
+          "System.Data.SqlClient": "4.5.1"
         },
         "runtime": {
           "Dissent.dll": {}
@@ -3267,7 +3268,7 @@
     "Autofac/4.6.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wKI7F6+n45gqfq0T8FuB3hFzaCkuegiFo5in6uB1y2Ai9ZYcjue8yqk3yzyNEwBDS7AyvlTUGSoNovwpUuKqTw==",
+      "sha512": "sha512-CFYkwxzwc9Gx/ci1JK6RGjyXivh3vJyPtpuXFh0yXEbhsNsaNmECdbUAbPVLZSmeN5dCEZgpopnIiwYL0AAjCg==",
       "path": "autofac/4.6.2",
       "hashPath": "autofac.4.6.2.nupkg.sha512"
     },
@@ -3337,7 +3338,7 @@
     "System.Net.Http/4.3.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-y7hv0o0weI0j0mvEcBOdt1F3CAADiWlcw3e54m8TfYiRmBPDIsHElx8QUPDlY4x6yWXKPGN0Z2TuXCTPgkm5WQ==",
+      "sha512": "sha512-6ZdOhw05Y7Da+nYKz7QFtBVeRTCrHd4wBxO0g45hETj1wI2hJEcU4d0dDUxmyHO9/5KXE/qZLtCHen6gBcT2cA==",
       "path": "system.net.http/4.3.2",
       "hashPath": "system.net.http.4.3.2.nupkg.sha512"
     },

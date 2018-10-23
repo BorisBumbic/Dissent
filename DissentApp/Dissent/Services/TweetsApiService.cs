@@ -14,7 +14,7 @@ namespace Dissent.Services
             var searchParameter = new SearchTweetsParameters(input)
             {
                 MaximumNumberOfResults =5,
-                Lang= LanguageFilter.Swedish,
+                //Lang= LanguageFilter.Swedish,
                 SearchType = SearchResultType.Recent,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly,
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)

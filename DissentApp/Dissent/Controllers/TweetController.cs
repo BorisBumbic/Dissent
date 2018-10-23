@@ -38,7 +38,7 @@ namespace Dissent.Controllers
             List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
 =======
 
-        // xxxxxxxx?input=qqqq&lat=qqqq&lng=qqqq&radius=qqqqqqq
+       
 
         [HttpGet]
         public async Task<ActionResult> TwitterResult(string input, double lat, double lng, int radius)

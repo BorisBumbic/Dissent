@@ -24,3 +24,20 @@ packages
 =======
 *.log
 >>>>>>> .merge_file_a10748
+DissentApp/Dissent/wwwroot/css/site.css.orig
+DissentApp/Dissent/Models/TwitterDbcontext.cs.orig
+DissentApp/Dissent/Models/Repository.cs.orig
+DissentApp/Dissent/Migrations/20181023131148_First.cs
+DissentApp/Dissent/Migrations/20181023131148_First.Designer.cs
+DissentApp/Dissent/Migrations/20181023112146_22.Designer.cs
+DissentApp/Dissent/Migrations/20181023095455_First.cs
+DissentApp/Dissent/Migrations/20181023095455_First.Designer.cs
+DissentApp/Dissent/Migrations/20181022151152_migge1_REMOTE_38612.cs
+DissentApp/Dissent/Migrations/20181022151152_migge1_LOCAL_38612.cs
+DissentApp/Dissent/Migrations/20181022151152_migge1_BASE_38612.cs
+DissentApp/Dissent/Controllers/TweetDbController.cs.orig
+DissentApp/Dissent/wwwroot/test.html.orig
+DissentApp/Dissent/Controllers/TweetController_REMOTE_53440.cs
+DissentApp/Dissent/Controllers/TweetController_LOCAL_53440.cs
+DissentApp/Dissent/Controllers/TweetController_BASE_53440.cs
+DissentApp/Dissent/Controllers/TweetController_BACKUP_53440.cs

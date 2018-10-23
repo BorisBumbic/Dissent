@@ -31,10 +31,7 @@ namespace Dissent.Controllers
             return View();
         }
   
-        //[HttpPost]
-        //public async Task<ActionResult> TwitterResult(string input)
-        //{
-        //    List<ITweet> incomingTweets = TweetsApiService.GetTweets(input);
+        
 
        
 
@@ -56,9 +53,14 @@ namespace Dissent.Controllers
 
             await SentimentApiService.RequestSentiment(tweetsMiddleList, tweetsFinalList);
 
+            _context.AddRange(tweetsFinalList);
+            _context.SaveChanges();
+
 
             return Ok (tweetsFinalList);
-            
+=======
+            return Ok(tweetsFinalList);
+>>>>>>> 5470e61ea1408d9efb6ccac3507fb2a086e49d88
         }
     }
 }

@@ -16,15 +16,15 @@ namespace Dissent.Models
             _context = context;
         }
 
-        public void Add(Tweets tweet)
+        public void Add(TweetsWithSentiment tweet)
         {
             _context.Add(tweet);
             _context.SaveChanges();
         }
 
-        public IEnumerable<Tweets> GetAll()
+        public IEnumerable<TweetsWithSentiment> GetAll()
         {
-            return _context.Tweets.ToList();
+            return _context.TweetsWithSentiment.ToList();
         }
 
 

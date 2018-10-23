@@ -1,97 +1,36 @@
-﻿
-<style>
-    /*table {
-                border-spacing: 0;
-                width: 100%;
-            }
+﻿    
+@model IEnumerable<Tweetinvi.Models.ITweet>
 
             td {
                 border: solid 1px #ddd;
                 padding: 5px 10px;
             }*/
 
-    #app {
-        margin-top: 130px;
-    }
-
-    #wrapper {
-        display: flex;
-        width: 100%;
-        align-items: initial;
-        height: 500px;
-    }
-
-    #content {
-        width: 100%;
-        height: 500px;
-        right: initial;
-        text-align: right;
-    }
-
-    #map {
-        height: 500px;
-        width: 100%;
-    }
-</style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
-
-
-<div id="app">
-    <div class="row">
-        <div class="col-md-8">
-
-            <div id="wrapper">
-                <div id="content">
-                    <div id="map" class="map">
-                    </div>
-                </div>
-            </div>
-
-        </div>
         <div class="col-md-4">
 
+
+            <label for="input">Twitter Name:</label>
+            <input type="text" name="input" id="twitterInputText" />
             <div class="form-group">
-                <label>Search:</label>
-                <input v-model="userinput" class="form-control" />
+                <button onclick="updateSearchText()" class="btn btn-default"  >Ok</button>
+
             </div>
 
-            <div class="form-group">
-                <label>Enter Radius:</label>
-                <input v-model="radius" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label>Latitude:</label>
-                <input v-model="lat" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label>Longitude:</label>
-                <input v-model="lng" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <button v-on:click="showTweetSentiment()" class="form-control">Ok</button>
-            </div>
 
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table>
-                <tr v-for="x in sentimentResponse">
-                    <td>{{x.text}}</td>
-                    <td>{{x.sentiment}}</td>
+    </div>*@
+<div class="row" id="TwitterIndex">
 
-                </tr>
-            </table>
-        </div>
-    </div>
+    <div class="col-md-4">
+        <form asp-action="TwitterResult">
 
+
+            <label for="input">Twitter Name:</label>
+            <input type="text" name="input" />
+            <div class="form-group">
+                <input type="submit" value="View Result" class="btn btn-default" />
+            </div>
+
+        </form>
+    </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-<script src="/js/dissent.js"></script>

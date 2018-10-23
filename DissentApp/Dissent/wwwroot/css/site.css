@@ -55,9 +55,16 @@ nav {
     left: 50%;
     margin-left: -50px !important;
     display: block;
-}*/
+}
 
-/*li {
+/*#map {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}*/
+li {
+ 
     margin-left: 4px;
     padding: 18px 1px 1px 1px;
 }*/

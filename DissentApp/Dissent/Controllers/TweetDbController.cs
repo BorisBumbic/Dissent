@@ -17,18 +17,25 @@ namespace Dissent.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Tweets.Include("incomingTweets").ToListAsync());
+            return View(await _context.text.Include("incomingTweets").ToListAsync());
         }
 
         [HttpPost]
-        public IActionResult Add([FromBody]Tweets tweets)
+        public IActionResult Add([FromBody]TweetsWithSentiment tweetsWithSentiment)
         {
-
-
-            _context.Add(tweets);
+            _context.Add(tweetsWithSentiment);
             _context.SaveChanges();
 
-            return Ok(tweets.Id);
+            return Ok(tweetsWithSentiment.Id);
+        }
+
+        [HttpPost]
+        public IActionResult Add([FromBody]Query query)
+        {
+            _context.Add(query);
+            _context.SaveChanges();
+
+            return Ok(query.Id);
         }
     }
 }

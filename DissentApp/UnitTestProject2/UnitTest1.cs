@@ -10,8 +10,8 @@ namespace UnitTestProject2
         [TestMethod]
         public async void TestMethod1()
         {
-            List<Tweets> inputList = new List<Tweets> { new Tweets { Id = "1", Language = "en", Text = "Trump sucks!" } };
-            List<TweetsWithSentiment> outputList = new List<TweetsWithSentiment> { new TweetsWithSentiment { Id = "1", Language = "en", Text = "Trump sucks!", Sentiment = 0.00F } };
+            List<RawTweets> inputList = new List<RawTweets> { new RawTweets { Id = "1", Language = "en", Text = "Trump sucks!" } };
+            List<TweetsWithSentiment> outputList = new List<TweetsWithSentiment> { new TweetsWithSentiment { Id = 1, TweetId = "1", Language = "en", Text = "Trump sucks!", Sentiment = 0.00F } };
 
             await Dissent.Services.SentimentApiService.RequestSentiment(inputList, outputList);
 

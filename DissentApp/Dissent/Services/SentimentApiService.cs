@@ -12,7 +12,7 @@ namespace Dissent.Services
 {
     public class SentimentApiService
     {
-        public static async Task RequestSentiment(List<Tweets> input, List<TweetsWithSentiment> sentimentList)
+        public static async Task RequestSentiment(List<RawTweets> input, List<TweetsWithSentiment> sentimentList)
         {
             var client = new HttpClient();
           

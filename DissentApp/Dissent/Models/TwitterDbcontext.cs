@@ -11,5 +11,7 @@ namespace Dissent.wwwroot.Models
         {
         }
         public DbSet<TweetsWithSentiment> TweetsWithSentiment { get; set; }
+
+        public DbSet<Query> Query { get; set; }
     }
 }

@@ -25,14 +25,14 @@ namespace Dissent.Services
         }
         
 
-        public static List<Tweets> TweetsToTweetsModelList(List<ITweet> matchingTweets)
+        public static List<RawTweets> TweetsToTweetsModelList(List<ITweet> matchingTweets)
         {
-            List<Tweets> tweetList = new List<Tweets>();
+            List<RawTweets> tweetList = new List<RawTweets>();
             List<TweetsWithSentiment> sentimentList = new List<TweetsWithSentiment>();
             foreach (var item in matchingTweets)
             {
                 if(item.Language == Language.English || item.Language == Language.Swedish)
-                tweetList.Add(new Tweets
+                tweetList.Add(new RawTweets
                 {
                     Id = item.IdStr,
                     Text = item.FullText,
@@ -59,7 +59,7 @@ namespace Dissent.Services
             return sentimentList;
         }
 
-        public static void ConvertToLanguageCode(List<Tweets> tweetList)
+        public static void ConvertToLanguageCode(List<RawTweets> tweetList)
         {
             foreach (var item in tweetList)
             {

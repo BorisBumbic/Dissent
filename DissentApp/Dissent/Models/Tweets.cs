@@ -5,9 +5,14 @@ using System.Threading.Tasks;
 
 namespace Dissent.Models
 {
-    
+    public class Query
+    {
+        public int Id { get; set; }
+        public string SearchQuery { get; set; }
+        public List<TweetsWithSentiment> SearchResults { get; set; }
+    }
 
-    public class Tweets
+    public class RawTweets
     {
         public string Id { get; set; }
         public string Text { get; set; }
@@ -23,6 +28,7 @@ namespace Dissent.Models
         public string Text { get; set; }
         public string Language { get; set; }
         public float Sentiment { get; set; }
+        public Query SearchQuery { get; set; }
     }
 
 

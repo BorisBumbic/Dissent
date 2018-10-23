@@ -23,12 +23,19 @@ namespace Dissent.Controllers
         [HttpPost]
         public IActionResult Add([FromBody]TweetsWithSentiment tweetsWithSentiment)
         {
-
-
             _context.Add(tweetsWithSentiment);
             _context.SaveChanges();
 
             return Ok(tweetsWithSentiment.Id);
+        }
+
+        [HttpPost]
+        public IActionResult Add([FromBody]Query query)
+        {
+            _context.Add(query);
+            _context.SaveChanges();
+
+            return Ok(query.Id);
         }
     }
 }

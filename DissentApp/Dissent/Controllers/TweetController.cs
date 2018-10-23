@@ -40,7 +40,7 @@ namespace Dissent.Controllers
         {
             List<ITweet> incomingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
 
-            List<Tweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
+            List<RawTweets> tweetsMiddleList = TweetsApiService.TweetsToTweetsModelList(incomingTweets);
 
             List<TweetsWithSentiment> tweetsFinalList = TweetsApiService.TweetsToTweetsWithSentimentModelList(incomingTweets);
 

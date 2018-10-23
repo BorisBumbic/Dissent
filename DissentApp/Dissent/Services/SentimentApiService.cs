@@ -40,7 +40,7 @@ namespace Dissent.Services
 
                 for (int i = 0; i < Math.Min(sentimentList.Count, data.documents.Length); i++)
                 {
-                    sentimentList[i].Sentiment = data.documents[i].score;
+                    sentimentList[i].Sentiment = data.documents[i].Score;
                 }
 
             }

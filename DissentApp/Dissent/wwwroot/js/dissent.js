@@ -15,7 +15,7 @@ function initMap() {
             userinput: "Stockholm",
             lat: "59.3293",
             lng: "18.0686",
-            radius:20
+            radius: 20
         },
         async created() {
 
@@ -222,8 +222,8 @@ function initMap() {
 
                     position: { lat: 59.3293, lng: 18.0686 },
                     map: map,
-                    
-                   
+
+
                     draggable: true
                 });
                 google.maps.event.addListener(this.marker, 'mouseover', function () {
@@ -255,7 +255,10 @@ function initMap() {
                 console.log("sentimentResponse", this.sentimentResponse);
             }
         }
-    });
-}
 
-    
+    }
+
+
+
+    )
+}

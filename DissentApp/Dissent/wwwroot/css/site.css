@@ -5,7 +5,10 @@ body {
     background-repeat: space;
     background-repeat: repeat;
     background-size: 100px 100px;
+}
 
+nav {
+    height: 80px;
 }
 
 
@@ -46,16 +49,29 @@ body {
     margin-left: -50px !important;
     display: block;
 }
+
 #TwitterIndex {
-    padding: 150px;
+    padding: 250px;
     left: 50%;
     margin-left: -50px !important;
     display: block;
 }
-/*#Textbox {
+
+#map {
     width: 300px;
     border: 25px solid green;
     padding: 25px;
     margin: 25px;
-}*/
+}
+li {
+ 
+    margin-left: 4px;
+    padding:18px 1px 1px 1px;
+    
+}
+#sitelogo{
+    margin-top: 4px;
+    height:400px;
+    width:400px;
+}
 

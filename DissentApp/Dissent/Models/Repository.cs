@@ -24,7 +24,7 @@ namespace Dissent.Models
 
         public IEnumerable<Tweets> GetAll()
         {
-            return _context.text.ToList();
+            return _context.Tweets.ToList();
         }
 
 

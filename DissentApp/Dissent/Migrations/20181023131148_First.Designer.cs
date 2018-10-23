@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dissent.Migrations
 {
     [DbContext(typeof(TwitterDbcontext))]
-    [Migration("20181022151152_migge1")]
-    partial class migge1
+    [Migration("20181023131148_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,16 +22,16 @@ namespace Dissent.Migrations
 
             modelBuilder.Entity("Dissent.Models.Tweets", b =>
                 {
-                    b.Property<string>("id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("language");
+                    b.Property<string>("Language");
 
-                    b.Property<string>("text");
+                    b.Property<string>("Text");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.ToTable("Text");
+                    b.ToTable("Tweets");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dissent", "Dissent\Dissent.csproj", "{96A1EF35-137B-412A-AAB8-CCA1BF71ADDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dissent", "Dissent\Dissent.csproj", "{96A1EF35-137B-412A-AAB8-CCA1BF71ADDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DissentTest", "UnitTestProject1\DissentTest.csproj", "{3227B880-0961-45C8-8283-16F65441503E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96A1EF35-137B-412A-AAB8-CCA1BF71ADDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96A1EF35-137B-412A-AAB8-CCA1BF71ADDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96A1EF35-137B-412A-AAB8-CCA1BF71ADDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3227B880-0961-45C8-8283-16F65441503E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3227B880-0961-45C8-8283-16F65441503E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3227B880-0961-45C8-8283-16F65441503E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3227B880-0961-45C8-8283-16F65441503E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

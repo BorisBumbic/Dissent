@@ -14,10 +14,12 @@ namespace Dissent.Models
         public string Language { get; set; }
 
     }
+    
 
     public class TweetsWithSentiment
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
+        public string TweetId { get; set; }
         public string Text { get; set; }
         public string Language { get; set; }
         public float Sentiment { get; set; }

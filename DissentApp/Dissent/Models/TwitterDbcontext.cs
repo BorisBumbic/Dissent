@@ -10,6 +10,6 @@ namespace Dissent.wwwroot.Models
             : base(options)
         {
         }
-        public DbSet<Tweets> text { get; set; }
+        public DbSet<TweetsWithSentiment> TweetsWithSentiment { get; set; }
     }
 }

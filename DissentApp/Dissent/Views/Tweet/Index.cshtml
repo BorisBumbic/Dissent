@@ -84,7 +84,7 @@
                 <button v-on:click="showTweetSentiment()" class="form-control">Ok</button>
             </div>
 
-            <table class="table table-sm table-dark" v-if="seen">
+            <table class="table table-sm table-dark  resulttable" v-if="seen">
                 <tr>
                     <td>Info:</td>
                 </tr>
@@ -92,7 +92,9 @@
                     <td>Number of Tweets: {{lengthOfResponse}}</td>
                 </tr>
                 <tr>
-                    <td>Average SentimenT: {{average}}</td>
+                    <td > Average Sentiment: {{average}}</td>
+                    <td class="defaultcolor" v-bind:class="{green:average>0.55, red:average<0.45, }"> </td>
+                  
                 </tr>
             </table>
 
@@ -123,6 +125,7 @@
 
         </tbody>
     </table>
+    <h3 style="color:black">{{message}}</h3>
 
 </div>
 

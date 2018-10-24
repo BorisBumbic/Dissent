@@ -1,7 +1,49 @@
 ﻿
+<style>
+    #indexbutton{
+        align-content:center;
+    }
+    #raw {
+        background-color: black;
+        border-radius: 30px;
+        padding: 10px;
+        margin-top: 140px;
+    }
+    .btn-change {
+        height: 50px;
+        width: 100px;
+       
+        margin: 20px;
+        
+        box-shadow: 0 0 1px #ccc;
+        -webkit-transition: all 0.5s ease-in-out;
+        border: 0px;
+        color: #fff;
+    }
 
-<div style="text-align:center;margin-top:200px;">
+        .btn-change:hover {
+            -webkit-transform: scale(1.1);
+            
+        }
 
-    <button id="HomeButton" style="font-size: 63px;background-color:#101010" onclick="location.href='@Url.Action("Index", "Tweet")'" class="btn btn-primary">Let's Get Start</button>
+</style>
+<div id="raw" class="p-3 mb-2 bg-dark text-white ">
 
+    <H3 style="color:darkgray">
+
+        Dissent - The world’s first sentiment barometer!
+
+        By analyzing tweets that match your query Dissent can offer you a detailed analysis of twitter users sentiment in regards to events and public figures in any given area in the world!
+        Just enter your query, specify location on the map and enter the search radius and off you are!
+
+        If you're interested in looking behind the scenes of this project, including which our API’s and contributors used, we refer you to our about page.
+        Otherwise we recommend you to try our service…
+
+    </H3>
 </div>
+
+    <div   style="text-align:center;margin-top:80px;" class="btn-change">
+
+        <button id="HomeButton"   style="font-size: 63px;background-color:#101010;border-radius: 30px; " onclick="location.href='@Url.Action("Index", "Tweet")'"  class="btn btn-primary "><p style="color:darkgray">Let's Get Started</p ></button>
+
+    </div>

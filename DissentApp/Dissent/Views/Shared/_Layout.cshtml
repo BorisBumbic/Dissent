@@ -15,7 +15,10 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
 </head>
+
 <body>
+
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header" style="color:black;">
@@ -34,10 +37,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index"><spam></spam></a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                  
-                    <li><a asp-area="" asp-controller="Tweet" asp-action="Index">tweet</a></li>
-                
-                  
+
+                    
+
+
                 </ul>
             </div>
         </div>
@@ -47,23 +50,18 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Dissent</p>
-        </footer>
-        <h4><button id="my-button" onclick="location.href='@Url.Action("YourActionName", "YourControllerName")'">Submit</button></h4>
-        <button type="button" class="btn btn-dark btn-lg btn-block">Block level button</button>
-        <h4>
-            <a href="Controller/ActionMethod">
-                <input type="button" value="Click Me" />
-            </a>
-        </h4>
+
+        @*<footer>
+                <p>&copy; 2018 - Dissent</p>
+            </footer>*@
+
+
     </div>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
- 
+
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"

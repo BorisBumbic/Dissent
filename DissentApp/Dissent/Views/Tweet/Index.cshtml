@@ -1,5 +1,5 @@
 ﻿<style>
- #app {
+    #app {
         margin-top: 130px;
     }
 
@@ -8,7 +8,7 @@
         width: 100%;
         align-items: initial;
         height: 500px;
-        margin-top:-20px;
+        margin-top: -20px;
     }
 
     #content {
@@ -22,6 +22,7 @@
         height: 500px;
         width: 100%;
     }
+
     .table {
         background: #212121 !important;
         color: white !important;
@@ -31,17 +32,17 @@
         background-color: yellow
     }
 
-    .resulttable td.green{
-        background-color:green;
+    .resulttable td.green {
+        background-color: green;
     }
 
-    .resulttable td.red{
-        background-color:red
+    .resulttable td.red {
+        background-color: red
     }
-
 </style>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
 
 
 
@@ -99,7 +100,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            
+
 
         </div>
     </div>
@@ -107,19 +108,19 @@
     <table class="table table-sm table-dark resulttable" v-if="seen" style="margin-top:20px">
         <thead>
             <tr>
-              
+
                 <th scope="col">Tweets</th>
                 <th scope="col">Sentiment Score</th>
                 <th scope="col"></th>
         </thead>
         <tbody>
-            <tr v-for="x in sentimentResponse" >
+            <tr v-for="x in sentimentResponse">
 
                 <td style="color:aliceblue">{{x.text}}</td>
                 <td>{{x.sentiment}}</td>
                 <td class="defaultcolor" v-bind:class="{green:x.sentiment>0.55, red:x.sentiment<0.45, }">    </td>
             </tr>
-           
+
         </tbody>
     </table>
 

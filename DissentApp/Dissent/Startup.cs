@@ -25,7 +25,7 @@ namespace Dissent
         {
             {
                 services.AddDbContext<TwitterDbcontext>(options =>
-                    options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = TweetDb;"));
+                    options.UseSqlServer("Data Source=tcp:dissent20181024115027dbserver.database.windows.net,1433;Initial Catalog=Dissent20181024115027_db;User Id=BorisBumbic@dissent20181024115027dbserver;Password=asdf1234."));
 
                 services.AddTransient<Repository, Repository>();
                 services.AddScoped<TweetsApiService>();

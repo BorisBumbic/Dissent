@@ -1,48 +1,75 @@
 ﻿<style>
-    table {
-        border-spacing: 0;
-        width: 100%;
+ #app {
+        margin-top: 130px;
     }
 
-    td {
-        border: solid 1px #ddd;
-        padding: 5px 10px;
+    #wrapper {
+        display: flex;
+        width: 100%;
+        align-items: initial;
+        height: 500px;
+        margin-top:-20px;
     }
 
-    .wrapper .map {
-        padding: 100px;
-        height: 100%;
+    #content {
         width: 100%;
-        float: right;
+        height: 500px;
+        right: initial;
+        text-align: right;
     }
+
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+    .table {
+        background: #212121 !important;
+        color: white !important;
+    }
+
+    .resulttable td.defaultcolor {
+        background-color: yellow
+    }
+
+    .resulttable td.green{
+        background-color:green;
+    }
+
+    .resulttable td.red{
+        background-color:red
+    }
+
 </style>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
 
-@*<@*div id="app">
+
+
+<div id="app">
     <div class="row">
-        <div class="col-md-8">*@
+        <div class="col-md-8">
 
-@*<div id="app">
-    <div class="row">
-        <div class="col-md-8">*@
+            <div id="wrapper">
+                <div id="content">
+                    <div id="map" class="map">
+                    </div>
+                </div>
+            </div>
 
-<div id="app" class="wrapper col-lg-offset-6">
-    <div id="content">
-        <div id="map" class="map"></div>
+        </div>
+        <div class="col-md-4">
 
-    </div>
-    <div id="searchBox">
-
-        @*<div class="form-group">
+            <div class="form-group">
                 <label>Search:</label>
                 <input v-model="userinput" class="form-control" />
-            </div>*@
+            </div>
 
-        Search:<input v-model="userinput" />
-        Enter Radius:<input v-model="radius" />
-        Latitude:<input v-model="lat" />
-        Longitude:<input v-model="lng" />
+            <div class="form-group">
+                <label>Enter Radius:</label>
+                <input v-model="radius" class="form-control" />
+            </div>
 
-        @*<div class="form-group">
+            <div class="form-group">
                 <label>Latitude:</label>
                 <input v-model="lat" class="form-control" />
             </div>
@@ -50,24 +77,54 @@
             <div class="form-group">
                 <label>Longitude:</label>
                 <input v-model="lng" class="form-control" />
-            </div>*@
+            </div>
 
-        <button v-on:click="showTweetSentiment()">Ok</button>
+            <div class="form-group">
+                <button v-on:click="showTweetSentiment()" class="form-control">Ok</button>
+            </div>
 
-        <table>
-            <tr v-for="x in sentimentResponse">
-                <td>{{x.text}}</td>
-                <td>{{x.sentiment}}</td>
+            <table class="table table-sm table-dark" v-if="seen">
+                <tr>
+                    <td>Info:</td>
+                </tr>
+                <tr v-if="seen">
+                    <td>Number of Tweets: {{lengthOfResponse}}</td>
+                </tr>
+                <tr>
+                    <td>Average SentimenT: {{average}}</td>
+                </tr>
+            </table>
 
-            </tr>
-        </table>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            
+
+        </div>
+    </div>
+
+    <table class="table table-sm table-dark resulttable" v-if="seen" style="margin-top:20px">
+        <thead>
+            <tr>
+              
+                <th scope="col">Tweets</th>
+                <th scope="col">Sentiment Score</th>
+                <th scope="col"></th>
+        </thead>
+        <tbody>
+            <tr v-for="x in sentimentResponse" >
+
+                <td style="color:aliceblue">{{x.text}}</td>
+                <td>{{x.sentiment}}</td>
+                <td class="defaultcolor" v-bind:class="{green:x.sentiment>0.55, red:x.sentiment<0.45, }">    </td>
+            </tr>
+           
+        </tbody>
+    </table>
+
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-<script src="~/js/dissent.js"></script>
-<!--<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX1XsmTAZIyKquTYmsVwO2mxZS5LZtC6Y&callback=initMap">
-</script>-->
+
+<script src="/js/dissent.js"></script>

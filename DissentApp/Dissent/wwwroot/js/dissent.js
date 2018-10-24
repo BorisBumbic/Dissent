@@ -10,7 +10,11 @@
             userinput: "Trump",
             lat: "59.3293",
             lng: "18.0686",
-            radius: 20
+            radius: 20,
+            message: "",
+            lengthOfResponse: "",
+            seen: false,
+            average: 0,
         },
         async created() {
 
@@ -240,7 +244,26 @@
                     method: "get"
                 });
 
-                this.sentimentResponse = await response.json();
+                    this.sentimentResponse = await response.json();
+
+                this.lengthOfResponse = this.sentimentResponse.length;
+
+                if (this.sentimentResponse.length == 0) {
+                    this.message = "No results found!"
+                } else if (this.sentimentResponse.length != 0) {
+                    this.message = "";
+                    this.seen = true;
+                }
+
+                let tempCalc = 0;
+                for (var i = 0; i < this.sentimentResponse.length; i++) {
+                    tempCalc += this.sentimentResponse[i].sentiment; 
+                }
+                
+                this.average = tempCalc / this.sentimentResponse.length;
+
+                this.lengthOfResponse = this.sentimentResponse.length;
+
                 console.log("sentimentResponse", this.sentimentResponse);
             }
         }

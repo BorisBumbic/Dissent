@@ -10,7 +10,7 @@ using Tweetinvi.Parameters;
 
 namespace Dissent.Services
 {
-    public class TweetsApiService
+    public  class TweetsApiService
     {
         private readonly TwitterDbcontext _context;
         private readonly ITwitterCredentials _credentials;
@@ -23,13 +23,16 @@ namespace Dissent.Services
             Auth.SetCredentials(_credentials);
         }
 
+        public TweetsApiService()
+        {
+        }
+
         public static List<ITweet> GetTweets(string input, double lat, double lng, int radius)
         {
             var searchParameter = new SearchTweetsParameters(input)
             {
-                MaximumNumberOfResults =5,
-                Lang= LanguageFilter.Swedish,
-                SearchType = SearchResultType.Mixed, //vi måste titta på exakt vad 'recent' gör. ofta får man inte några resultat alls på rätt vanliga saker.//BB
+                MaximumNumberOfResults =10,
+                Lang= LanguageFilter.English,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly, //jag la till endast original tweets//BB
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };
@@ -38,10 +41,9 @@ namespace Dissent.Services
             return matchingTweets;
         }
         
-        public static List<RawTweets> TweetsToTweetsModelList(List<ITweet> matchingTweets)
+        public static List<RawTweets> TweetsToRawTweetsList(List<ITweet> matchingTweets)
         {
             List<RawTweets> tweetList = new List<RawTweets>();
-            List<TweetsWithSentiment> sentimentList = new List<TweetsWithSentiment>();
             foreach (var item in matchingTweets)
             {
                 tweetList.Add(new RawTweets
@@ -84,7 +86,7 @@ namespace Dissent.Services
         {
             List<ITweet> incomingTweets = GetTweets(input, lat, lng, radius);
 
-            List<RawTweets> tweetsMiddleList = TweetsToTweetsModelList(incomingTweets);
+            List<RawTweets> tweetsMiddleList = TweetsToRawTweetsList(incomingTweets);
 
             List<TweetsWithSentiment> tweetsFinalList = TweetsToTweetsWithSentimentModelList(incomingTweets);
 

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dissent.Migrations
 {
     [DbContext(typeof(TwitterDbcontext))]
-    [Migration("20181023115417_l")]
-    partial class l
+    [Migration("20181024130309_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

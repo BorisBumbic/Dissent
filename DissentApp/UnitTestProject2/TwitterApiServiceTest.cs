@@ -25,13 +25,6 @@ namespace DissentTest
             Assert.IsNotNull(matchingTweets);
         }
 
-        //[TestMethod]
-        //public void Populating_A_RawTweetList_With_ITweet_Input()
-        //{
-        //    Tweet t;
-        //    var itweetList = new List<Tweet> { new Tweet { IdStr =  }
-        //}; }
-
         [TestMethod]
         public void Converting_LanguageString_To_Sentiment_API_Language_Code_English()
         {
@@ -51,7 +44,6 @@ namespace DissentTest
             TweetsApiService.ConvertToLanguageCode(testList);
 
             Assert.AreEqual("sv", testList[0].Language);
-
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Dissent.Services
             {
                 MaximumNumberOfResults =10,
                 Lang= LanguageFilter.English,
-                TweetSearchType = TweetSearchType.OriginalTweetsOnly, //jag la till endast original tweets//BB
+                TweetSearchType = TweetSearchType.OriginalTweetsOnly, //jag la till endast original tw                                                                                                      eets//BB
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
             };
 

@@ -234,10 +234,7 @@
                     app.lat = this.getPosition().lat();
                     app.lng = this.getPosition().lng();
                 });
-
-
             },
-
 
             async showTweetSentiment() {
                 let response = await fetch("/Tweet/TwitterResult/?input=" + this.userinput + "&lat=" + this.lat + "&lng=" + this.lng + "&radius=" + this.radius, {
@@ -267,5 +264,4 @@
                 console.log("sentimentResponse", this.sentimentResponse);
             }
         }
-
      })

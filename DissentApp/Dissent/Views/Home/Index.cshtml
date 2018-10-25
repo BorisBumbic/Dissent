@@ -1,37 +1,37 @@
 ﻿
 <style>
-    #indexbutton{
-        align-content:center;
+    #indexbutton {
+        align-content: center;
     }
+
     #raw {
-        background-color: black;
+        background-color: whitesmoke;
         border-radius: 30px;
         padding: 10px;
         margin-top: 140px;
     }
+
     .btn-change {
         height: 50px;
-        width: 100px;
-       
+
         margin: 20px;
-        
-        box-shadow: 0 0 1px #ccc;
+
         -webkit-transition: all 0.5s ease-in-out;
         border: 0px;
         color: #fff;
     }
-
-        .btn-change:hover {
-            -webkit-transform: scale(1.1);
-            
-        }
-
+    
+    .btn-change:hover {
+        -webkit-transform: scale(1.1);
+    }
 </style>
 <div id="raw" class="p-3 mb-2 bg-dark text-white ">
 
-    <H3 style="color:darkgray">
+    <H3 style="color:black; text-align:center">
 
-        Dissent - The world’s first sentiment barometer!
+        <p class="lead" style="font-size: 40px">
+            Dissent - The world’s first sentiment barometer!
+        </p>
 
         By analyzing tweets that match your query Dissent can offer you a detailed analysis of twitter users sentiment in regards to events and public figures in any given area in the world!
         Just enter your query, specify location on the map and enter the search radius and off you are!
@@ -42,8 +42,11 @@
     </H3>
 </div>
 
-    <div   style="text-align:center;margin-top:80px;" class="btn-change">
 
-        <button id="HomeButton"   style="font-size: 63px;background-color:#101010;border-radius: 30px; " onclick="location.href='@Url.Action("Index", "Tweet")'"  class="btn btn-primary "><p style="color:darkgray">Let's Get Started</p ></button>
 
-    </div>
+
+<div id="HomeButton" style="text-align:center;margin-top:80px;" class="btn-change">
+
+    <button style="font-size: 63px;background-color:#101010; border-radius: 30px; " onclick="location.href='@Url.Action("Index", "Tweet")'" class="btn btn-primary "><p style="color:darkgray">Let's Get Started</p></button>
+
+</div>

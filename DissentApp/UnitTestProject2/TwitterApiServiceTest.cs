@@ -1,4 +1,5 @@
-﻿using Dissent.Models;
+﻿using Dissent.Credentials;
+using Dissent.Models;
 using Dissent.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ namespace DissentTest
     [TestClass]
     public class TwitterApiServiceTest
     {
+
+
+
+
         [TestMethod]
         public void Getting_Back_Tweets_From_API_With_TwitterInvi()
         {
@@ -19,6 +24,10 @@ namespace DissentTest
             double lat = 59.3293;
             double lng = 18.0686;
             int radius = 50;
+
+
+            var _credentials = MyCredentials.GenerateCredentials();
+            Auth.SetCredentials(_credentials);
 
             List<ITweet> matchingTweets = TweetsApiService.GetTweets(input, lat, lng, radius);
 

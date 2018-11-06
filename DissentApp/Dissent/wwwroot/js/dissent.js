@@ -247,6 +247,7 @@
 
                 if (this.sentimentResponse.length === 0) {
                     this.message = "No results found!"
+                   
                 } else if (this.sentimentResponse.length !==0) {
                     this.message = "";
                     this.seen = true;

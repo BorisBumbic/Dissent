@@ -32,9 +32,10 @@ namespace Dissent.Services
             var searchParameter = new SearchTweetsParameters(input)
             {
                 MaximumNumberOfResults =10,
-                Lang= LanguageFilter.English,
+                //Lang= LanguageFilter.English,
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly, //jag la till endast original tw                                                                                                      eets//BB
                 GeoCode = new GeoCode(lat, lng, radius, DistanceMeasure.Kilometers)
+                
             };
 
             List<ITweet> matchingTweets = Search.SearchTweets(searchParameter).ToList();

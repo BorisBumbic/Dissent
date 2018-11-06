@@ -4,6 +4,7 @@ using Dissent.wwwroot.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -26,10 +27,11 @@ namespace Dissent
             {
                 services.AddDbContext<TwitterDbcontext>(options =>
                     options.UseSqlServer("Data Source=tcp:dissent20181024115027dbserver.database.windows.net,1433;Initial Catalog=Dissent20181024115027_db;User Id=BorisBumbic@dissent20181024115027dbserver;Password=asdf1234."));
-
+                services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<TwitterDbcontext>();
                 services.AddTransient<Repository, Repository>();
                 services.AddScoped<TweetsApiService>();
                 services.AddMvc();
+                services.AddTransient<IFeedbackRepository, FeedbackRepository>();
             }
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -58,6 +60,7 @@ namespace Dissent
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

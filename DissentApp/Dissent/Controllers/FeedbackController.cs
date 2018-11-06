@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dissent.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class FeedbackController : Controller
     {
         private readonly IFeedbackRepository _feedbackRepository;

@@ -63,6 +63,10 @@ namespace Dissent.Controllers
                 {
                     return RedirectToAction("Index", "Tweet");
                 }
+                if (!result.Succeeded)
+                {
+                    new IdentityResult();
+                }
             }
             return View(loginViewModel);
         }
